@@ -5,6 +5,22 @@ layout: default
 # VRPlayin
 ## A programmer's approach to designing a VR arcade
 
+### The Launcher
+
+![launcher](./assets/img/glaze.png)
+
+### The Governor
+
+![governor](./assets/img/governor.png)
+
+### The Store Manager
+
+![booking](./assets/img/booking.png)
+
+### The Scout
+
+![scout](./assets/img/scout.png)
+
 Suppose you walked into a technical interview and was asked a question:
 
 > How would you design a VR arcade?

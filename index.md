@@ -2,30 +2,41 @@
 layout: default
 ---
 
-# About Me
+# About
 
 Hi!
 
-I'm a software engineer from Toronto, Canada
+I'm a software engineer with an unhealthy obsession with graphics programming/compute shaders.
+
+When I'm not in front of a computer I like to work on electronics, RC models/quad copters.
+
+Apart from flying model airplanes I'm also a student pilot working towards my Private Pilot License.
+
+[Resume](./assets/bryan_resume.pdf)
+[Email](mailto:byebyebryan@gmail.com)
 
 # Projects
 
-[VRPlayin](./vrplayin.html)
+### [VRPlayin](./vrplayin.html)
+
+![vrplayin](./assets/img/vrplayin.png)
 
 A programmer's approach to designing a VR arcade
 
-[Project R](./projectr.html)
+### [Project R](./projectr.html)
 
-VR scuptling to the max
+![vrplayin](./assets/img/vrplayin.png)
 
-[Cubey](./cubey.html)
+VR sculpting to the max
 
-Compute shaders are awesome
+### [Cubey](./cubey.html)
 
-[Gomoku](./gomoku.html)
+![vrplayin](./assets/img/vrplayin.png)
 
-A practical guide to tree search
+OpenGL Compute Shaders are awesome
 
-[Quad Copters](./miniquad.html)
+### [Gomoku](./gomoku.html)
 
-Fast and dangerous
+![vrplayin](./assets/img/vrplayin.png)
+
+A practical example of DFS tree search
