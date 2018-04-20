@@ -10,10 +10,9 @@ I'm a software engineer with an unhealthy obsession with graphics programming/co
 
 When I'm not in front of a computer I like to work on electronics, RC models/quad copters.
 
-Apart from flying model airplanes I'm also a student pilot working towards my Private Pilot License.
+### [Resume](./assets/bryan_resume.pdf)
 
-[Resume](./assets/bryan_resume.pdf)
-[Email](mailto:byebyebryan@gmail.com)
+### [Email](mailto:byebyebryan@gmail.com)
 
 # Projects
 
