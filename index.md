@@ -34,8 +34,6 @@ A OpenGL compute shader playground
 
 [![cubey](./assets/img/vrplayin.png)](./cubey.html)
 
-OpenGL Compute Shaders are awesome
-
 ### [Gomoku](./gomoku.html)
 
 A practical example of DFS tree search
