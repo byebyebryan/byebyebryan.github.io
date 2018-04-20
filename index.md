@@ -18,24 +18,26 @@ When I'm not in front of a computer I like to work on electronics, RC models/qua
 
 ### [VRPlayin](./vrplayin.html)
 
-![vrplayin](./assets/img/vrplayin.png)
-
 A programmer's approach to designing a VR arcade
+
+[![vrplayin](./assets/img/vrplayin.png)](./vrplayin.html)
 
 ### [Project R](./projectr.html)
 
-![vrplayin](./assets/img/vrplayin.png)
+From VR sculpting to 3D printing
 
-VR sculpting to the max
+[![projectr](./assets/img/vrplayin.png)](./projectr.html)
 
 ### [Cubey](./cubey.html)
 
-![vrplayin](./assets/img/vrplayin.png)
+A OpenGL compute shader playground
+
+[![cubey](./assets/img/vrplayin.png)](./cubey.html)
 
 OpenGL Compute Shaders are awesome
 
 ### [Gomoku](./gomoku.html)
 
-![vrplayin](./assets/img/vrplayin.png)
-
 A practical example of DFS tree search
+
+[![gomoku](./assets/img/vrplayin.png)](./gomoku.html)
