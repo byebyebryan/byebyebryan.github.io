@@ -5,4 +5,24 @@ layout: default
 # Project R
 ## From sculpting in VR to 3D printing
 
-A funny story is that this was actually the project that got Andy, Bill and me together and thinking about doing our own startup.
+### Voxel Sculpting
+
+
+
+### Marching Cubes
+
+The whole idea of voxel-based solid surface modeling boils down to
+
+### The Edit List
+
+
+
+### Ray Tracer
+
+
+
+### Sparse Voxel Octree
+
+
+
+### Ray Tracer Plus

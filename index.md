@@ -33,9 +33,3 @@ From VR sculpting to 3D printing
 A OpenGL compute shader playground
 
 [![cubey](./assets/img/vrplayin.png)](./cubey.html)
-
-### [Gomoku](./gomoku.html)
-
-A practical example of DFS tree search
-
-[![gomoku](./assets/img/vrplayin.png)](./gomoku.html)
