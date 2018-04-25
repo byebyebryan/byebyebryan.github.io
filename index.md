@@ -26,10 +26,10 @@ A programmer's approach to designing a VR arcade
 
 From VR sculpting to 3D printing
 
-[![projectr](./assets/img/vrplayin.png)](./projectr.html)
+[![projectr](./assets/img/projectr.png)](./projectr.html)
 
 ### [Cubey](./cubey.html)
 
 A OpenGL compute shader playground
 
-[![cubey](./assets/img/vrplayin.png)](./cubey.html)
+[![cubey](./assets/img/cubey.png)](./cubey.html)

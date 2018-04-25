@@ -13,34 +13,22 @@ Not only you will gain insights to how the graphics pipeline works, it is also a
 
 ### GPU Particles
 
+[![GPU Particles](http://img.youtube.com/vi/XKr-VAtpp-8/0.jpg)](http://www.youtube.com/watch?v=XKr-VAtpp-8)
+
 A classic intro to compute shaders : how to render a million Particles.
 
-I used a fat flat buffer to store the position of all the particles and updated every frame using a compute shader.
-I added some attractors that are randomly roaming around to get the particles to move.
+I added some attractors that are randomly roaming around to get the particles to dance a bit.
+
 A geometry shader is used to expand each particle to a camera facing quad.
 
-### Marching Cubes
+### Real-time Fluid Simulation
 
-Another good topic for GPGPU is procedural content generation.
-To generate a voxel terrain, typically some noise function (Perlin noise or FBM noise) are used to generate a density field.
-Then Marching Cubes can be used to polygonise the field and extract a mesh to be rendered onto screen.
+[![GPU Particles](http://img.youtube.com/vi/_likq0EsXFI/0.jpg)](http://www.youtube.com/watch?v=_likq0EsXFI)
 
-It is fairly standard to implement MC.
-The tricky part is to generate the indices buffer to eliminate the duplicated vertices.
+Eulerian fluid simulation using compute shaders.
 
-### Fluid Simulation
-
-Usually in video games or real time applications smokes are done via particles.
-Compute shaders allows us to do fluid simulations that provides impressive visuals.
+Rendering is done via simple fixed-steps ray marching. The volumetric lighting effect is a result of a second opacity/shadow volume.
 
 Tips:
-A higher order advocation method really helps with the visual quality.
-Vortices confinement helps hugely with bringing back the lost details resulted by numerical dissipation.
-
-### Volumetric Lighting/Shadowing
-
-Now you have simulated how the smoke flows, but you still need to render it.
-One way of doing it is actually feed the density field through MC and render the result mesh using traditional rasterization.
-
-A more popular method is to ray trace into the field directly.
-By adding a extra step of calculating a shadow volume, you get nice shadows and those sexy light shafts.
+- A higher order advection method (for example Mac-Cormack instead of Euler) improved quality of the simulation considerably.
+- Vortices confinement helps hugely with bringing back the lost details resulted by numerical dissipation.
