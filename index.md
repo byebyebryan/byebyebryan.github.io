@@ -6,7 +6,7 @@ layout: default
 
 Hi!
 
-I'm a software engineer with an unhealthy obsession with graphics programming/compute shaders.
+I'm a software engineer with an unhealthy obsession with compute shaders.
 
 When I'm not in front of a computer I like to work on electronics, RC models/quad copters.
 
