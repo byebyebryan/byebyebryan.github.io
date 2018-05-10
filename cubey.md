@@ -15,7 +15,7 @@ Not only you will gain insights to how the graphics pipeline works, it is also a
 
 [![GPU Particles](http://img.youtube.com/vi/XKr-VAtpp-8/0.jpg)](http://www.youtube.com/watch?v=XKr-VAtpp-8)
 
-A classic intro to compute shaders : how to render a million Particles.
+A classic intro to compute shaders : how to render a million particles.
 
 I added some attractors that are randomly roaming around to get the particles to dance a bit.
 
@@ -27,7 +27,7 @@ A geometry shader is used to expand each particle to a camera facing quad.
 
 Eulerian fluid simulation using compute shaders.
 
-Rendering is done via simple fixed-steps ray marching. The volumetric lighting effect is a result of a second opacity/shadow volume.
+Rendering is done via simple fixed-steps ray marching. The volumetric lighting effect is a result of a second shadow volume.
 
 Tips:
 - A higher order advection method (for example Mac-Cormack instead of Euler) improved quality of the simulation considerably.
