@@ -1,7 +1,5 @@
-theme: nielsenramon/chalk
+theme: jekyll-theme-midnight
 title: Bryan Bai
 email: byebyebryan@gmail.com
 description: Bryan's portfolio
 logo: /assets/img/photo.png
-name: Bryan Bai
-blog_theme: dark
