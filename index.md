@@ -1,6 +1,5 @@
 ---
-layout: home
-author_profile: true
+layout: default
 ---
 
 # Hello! My name is Bryan.
