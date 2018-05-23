@@ -1,5 +1,6 @@
 ---
-layout: default
+layout: page
+title: Bryan's Portfolios
 ---
 
 # Hello! My name is Bryan.

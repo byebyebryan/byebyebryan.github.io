@@ -1,5 +1,8 @@
 theme: minima
 title: Bryan Bai
+author: Bryan Bai
 email: byebyebryan@gmail.com
 description: Bryan's portfolio
-logo: /assets/img/photo.png
+header_pages:
+  - blog.md
+  - about.md
