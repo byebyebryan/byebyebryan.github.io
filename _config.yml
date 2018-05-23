@@ -1,19 +1,5 @@
-<<<<<<< HEAD
-remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "dirt"
-title: "Working On It"
-name: "Bryan Bai"
-author:
-  name   : "Your Name"
-  avatar : "/assets/img/me.png"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
-  email  : "byebyebryan@gmail.com"
-  uri    : "https://byebyebryan.com"
-  home   : # null (default), "absolute or relative url to link to author home"
-=======
 theme: jekyll-theme-midnight
 title: Bryan Bai
 email: byebyebryan@gmail.com
 description: Bryan's portfolio
 logo: /assets/img/photo.png
->>>>>>> parent of 5f83596... Changed theme to minimal-mistakes
