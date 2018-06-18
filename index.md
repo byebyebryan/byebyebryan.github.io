@@ -21,16 +21,16 @@ I'm currently looking for the next big challenge to take on. Feel free to grab a
 
 A programmer's approach to designing a VR arcade
 
-[![vrplayin](./assets/img/vrplayin.png)](./vrplayin.html)
+[![vrplayin](./assets/img/vrplayin1.png)](./vrplayin.html)
 
 ### [Project R](./projectr.html)
 
 From VR sculpting to 3D printing
 
-[![projectr](./assets/img/projectr.png)](./projectr.html)
+[![projectr](./assets/img/projectr1.png)](./projectr.html)
 
 ### [Cubey](./cubey.html)
 
 A OpenGL compute shader playground
 
-[![cubey](./assets/img/cubey.png)](./cubey.html)
+[![cubey](./assets/img/cubey1.png)](./cubey.html)
