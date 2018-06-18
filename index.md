@@ -5,8 +5,6 @@ title: Hi there!
 
 # My name is Bryan
 
-![Me](./assets/img/headshot.png)
-
 I'm a software engineer living in Toronto, Canada. I co-founded VNovus and launched VRPlayin which has brought the joy of VR to tens of thousands of Torontonians. Before that I worked at Mi9 Business Intelligence as a backend/database developer.
 
 I didn't learn my data structures, algorithms and design patterns in a classroom but through years of hands-on experiences, and I can't get enough of them. I pride myself on being able to think like a programmer and solve problems like an engineer.
