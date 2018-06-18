@@ -4,5 +4,4 @@ author: Bryan Bai
 email: byebyebryan@gmail.com
 description: Bryan's portfolio
 header_pages:
-  - blog.md
-  - about.md
+  - index.md

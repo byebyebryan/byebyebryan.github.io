@@ -1,9 +1,11 @@
 ---
 layout: page
-title: Bryan's Portfolios
+title: Hi there!
 ---
 
-# Hello! My name is Bryan.
+# My name is Bryan
+
+![Me](./assets/img/headshot.png)
 
 I'm a software engineer living in Toronto, Canada. I co-founded VNovus and launched VRPlayin which has brought the joy of VR to tens of thousands of Torontonians. Before that I worked at Mi9 Business Intelligence as a backend/database developer.
 
@@ -13,7 +15,7 @@ I also have a strong interest in graphics programming. Compute shaders opened th
 
 I'm mostly a software guy but I'm no stranger to a soldering iron. I've made many contraptions using RPi, Arduino or STM32 boards. I'm also a RC hobbyist who have built, flown and crashed a lot of model airplanes, helicopters and quadcopters.
 
-I'm currently looking for the next big challenge to take on. Feel free to grab a copy of my [resume](./assets/bryan_bai_resume.pdf) or send me a [email](mailto:byebyebryan@gmail.com).
+I'm currently looking for the next big challenge to take on. Feel free to grab a copy of my [resume](./assets/bryan_resume.pdf) or send me a [email](mailto:byebyebryan@gmail.com).
 
 # Projects
 
