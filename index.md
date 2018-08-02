@@ -13,7 +13,7 @@ I also have a strong interest in graphics programming. Compute shaders opened th
 
 I'm mostly a software guy but I'm no stranger to a soldering iron. I've made many contraptions using RPi, Arduino or STM32 boards. I'm also a RC hobbyist who have built, flown and crashed a lot of model airplanes, helicopters and quadcopters.
 
-I'm currently looking for the next big challenge to take on. Feel free to grab a copy of my [resume](./assets/bryan_resume.pdf) or send me a [email](mailto:byebyebryan@gmail.com).
+Feel free to grab a copy of my [resume](./assets/bryan_resume.pdf) or send me a [email](mailto:byebyebryan@gmail.com).
 
 # Projects
 
