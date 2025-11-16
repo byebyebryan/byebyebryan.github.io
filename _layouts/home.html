@@ -40,8 +40,9 @@ layout: default
             <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
             <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
           </div>
-          {% if post.excerpt %}
-            <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
+          {% assign summary = post.description | default: post.excerpt %}
+          {% if summary %}
+            <p>{{ summary | strip_html | truncate: 160 }}</p>
           {% endif %}
         </li>
       {% endfor %}
