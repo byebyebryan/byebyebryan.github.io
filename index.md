@@ -6,12 +6,7 @@ eyebrow: blog.byebyebryan.com
 sections:
   - title: About
     body: >
-      This space will hold notes, prototypes, and devlog entries as I explore
-      new rendering ideas, engine tech, and whatever else keeps me curious.
-  - title: What to expect
-    list:
-      - Deep dives on GPU and graphics tricks.
-      - C++ experiments and language features in practice.
-      - Simulation toys, physics detours, and quick sketches.
-      - Random prototypes that may never ship but are fun anyway.
+      This dev log is where I explore the craft side of coding:
+      cleaning up old experiments, trying new ideas, and thinking out loud
+      about design and clean code with AI as a helper.
 ---
