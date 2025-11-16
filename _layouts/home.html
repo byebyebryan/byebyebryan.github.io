@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+<header class="hero">
+  <p class="eyebrow">
+    {{ page.eyebrow | default: site.url | replace: 'https://', '' }}
+  </p>
+  <h1>{{ page.title | default: site.title }}</h1>
+  {% if page.lede %}
+    <p class="lede">{{ page.lede }}</p>
+  {% endif %}
+</header>
+
+{% if page.sections %}
+  {% for section in page.sections %}
+    <section class="card">
+      <h2>{{ section.title }}</h2>
+      {% if section.body %}
+        {{ section.body | markdownify }}
+      {% endif %}
+      {% if section.list %}
+        <ul>
+          {% for item in section.list %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </section>
+  {% endfor %}
+{% endif %}
+
+{% if site.posts.size > 0 %}
+  <section class="card">
+    <h2>Latest posts</h2>
+    <ul class="post-list">
+      {% for post in site.posts limit: 5 %}
+        <li>
+          <div>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+          </div>
+          {% if post.excerpt %}
+            <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endif %}
+
+<footer>
+  <p>
+    Built for GitHub Pages. Follow along at
+    <a href="https://github.com/{{ site.github_username }}/blog">
+      github.com/{{ site.github_username }}/blog
+    </a>.
+  </p>
+</footer>

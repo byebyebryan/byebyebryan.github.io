@@ -1,0 +1,21 @@
+title: Bryan's Dev Log
+description: Notes on graphics, C++, simulation, and random experiments
+url: https://blog.byebyebryan.com
+baseurl: ""
+github_username: byebyebryan
+
+permalink: /:categories/:year/:month/:day/:title/
+markdown: kramdown
+timezone: Etc/UTC
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      author: Bryan
+
+theme: null
+plugins:
+  - jekyll-feed

@@ -1,0 +1,162 @@
+:root {
+  --bg: #07070b;
+  --fg: #f8f8ff;
+  --muted: #9aa0b3;
+  --card: #11111a;
+  --accent: #66d9ed;
+  --accent-dim: #194754;
+  --font: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font);
+  background-color: var(--bg);
+  color: var(--fg);
+  line-height: 1.5;
+}
+
+main.page {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: clamp(2.5rem, 7vw, 3.2rem);
+  margin: 0;
+}
+
+.lede {
+  font-size: 1.2rem;
+  margin: 0;
+  color: var(--muted);
+}
+
+.card {
+  padding: 1.75rem;
+  border-radius: 1.5rem;
+  background: radial-gradient(circle at top, var(--card), #0a0a11);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.35rem;
+}
+
+.card p,
+.card li {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.card ul {
+  padding-left: 1.25rem;
+  margin: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--fg);
+  border-color: var(--accent);
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.post-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.post-list a {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.post-date {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-left: 0.25rem;
+}
+
+.post-body {
+  color: var(--fg);
+}
+
+.post-body p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+.post-body pre {
+  background: #050507;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  overflow-x: auto;
+  font-family: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+}
+
+.post-body code {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 0.2em 0.35em;
+  border-radius: 0.4em;
+  font-size: 0.95em;
+}
+
+footer {
+  font-size: 0.9rem;
+  color: var(--muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1rem;
+}
+
+.back-link {
+  margin: 0 0 2rem;
+}
