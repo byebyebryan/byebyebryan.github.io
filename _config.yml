@@ -6,7 +6,7 @@ github_username: byebyebryan
 
 permalink: /:categories/:year/:month/:day/:title/
 markdown: kramdown
-timezone: Etc/UTC
+timezone: America/Los_Angeles
 
 defaults:
   - scope:

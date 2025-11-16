@@ -47,6 +47,38 @@ layout: default
       {% endfor %}
     </ul>
   </section>
+  {% assign grouped_projects = site.posts | group_by: "project" %}
+  {% assign has_projects = false %}
+  {% for project in grouped_projects %}
+    {% unless project.name == nil or project.name == "" %}
+      {% assign has_projects = true %}
+    {% endunless %}
+  {% endfor %}
+  {% if has_projects %}
+    <section class="card">
+      <h2>Posts by project</h2>
+      {% for project in grouped_projects %}
+        {% unless project.name == nil or project.name == "" %}
+          <div class="project-group">
+            <h3>{{ project.name }}</h3>
+            <ul class="post-list">
+              {% for post in project.items %}
+                <li>
+                  <div>
+                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                    <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+                  </div>
+                  {% if post.excerpt %}
+                    <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endunless %}
+      {% endfor %}
+    </section>
+  {% endif %}
 {% endif %}
 
 <footer>
