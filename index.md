@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Welcome to my dev log.
+title: Bryan's dev log.
 lede: I write about graphics, C++, simulation, and random experiments.
 eyebrow: blog.byebyebryan.com
 sections:
