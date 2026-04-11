@@ -1,12 +1,13 @@
 ---
 layout: home
-title: Bryan's dev log.
-lede: I write about graphics, C++, simulation, and random experiments.
-eyebrow: blog.byebyebryan.com
+title: Bryan
+lede: Building games, graphics experiments, and AI tooling.
+eyebrow: dev.byebyebryan.com
 sections:
-  - title: About
+  - title: Projects
     body: >
-      This dev log is where I explore the craft side of coding:
-      cleaning up old experiments, trying new ideas, and thinking out loud
-      about design and clean code with AI as a helper.
+      Work in progress.
+  - title: Notes
+    body: >
+      Short entries on things worth writing down.
 ---
