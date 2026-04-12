@@ -19,6 +19,16 @@ layout: default
       {% if section.body %}
         {{ section.body | markdownify }}
       {% endif %}
+      {% if section.projects %}
+        <ul class="project-list">
+          {% for project in section.projects %}
+            <li>
+              <a href="{{ project.url }}" class="project-name">{{ project.name }}</a>
+              <p>{{ project.description }}</p>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
       {% if section.list %}
         <ul>
           {% for item in section.list %}

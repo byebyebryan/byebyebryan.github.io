@@ -100,6 +100,30 @@ a:focus-visible {
   border-color: var(--accent);
 }
 
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.project-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.project-name {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.project-list p {
+  margin: 0;
+}
+
 .post-list {
   list-style: none;
   padding: 0;
