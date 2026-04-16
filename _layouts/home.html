@@ -25,6 +25,13 @@ layout: default
             <li>
               <a href="{{ project.url }}" class="project-name">{{ project.name }}</a>
               <p>{{ project.description }}</p>
+              {% if project.links %}
+                <p class="project-links">
+                  {% for link in project.links %}
+                    <a href="{{ link.url }}">{{ link.label }}</a>
+                  {% endfor %}
+                </p>
+              {% endif %}
             </li>
           {% endfor %}
         </ul>
