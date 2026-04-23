@@ -23,15 +23,22 @@ layout: default
         <ul class="project-list">
           {% for project in section.projects %}
             <li>
-              <a href="{{ project.url }}" class="project-name">{{ project.name }}</a>
-              <p>{{ project.description }}</p>
-              {% if project.links %}
-                <p class="project-links">
-                  {% for link in project.links %}
-                    <a href="{{ link.url }}">{{ link.label }}</a>
-                  {% endfor %}
-                </p>
+              {% if project.image %}
+                <a href="{{ project.url }}" class="project-preview">
+                  <img src="{{ project.image | relative_url }}" alt="{{ project.image_alt | default: project.name }}" loading="lazy" />
+                </a>
               {% endif %}
+              <div class="project-copy">
+                <a href="{{ project.url }}" class="project-name">{{ project.name }}</a>
+                <p>{{ project.description }}</p>
+                {% if project.links %}
+                  <p class="project-links">
+                    {% for link in project.links %}
+                      <a href="{{ link.url }}">{{ link.label }}</a>
+                    {% endfor %}
+                  </p>
+                {% endif %}
+              </div>
             </li>
           {% endfor %}
         </ul>

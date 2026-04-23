@@ -112,6 +112,26 @@ a:focus-visible {
 .project-list li {
   display: flex;
   flex-direction: column;
+  gap: 0.8rem;
+}
+
+.project-preview {
+  display: block;
+  overflow: hidden;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0a0a11;
+}
+
+.project-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.project-copy {
+  display: flex;
+  flex-direction: column;
   gap: 0.25rem;
 }
 
@@ -146,6 +166,25 @@ a:focus-visible {
 .project-links a:focus-visible {
   color: var(--fg);
   border: none;
+}
+
+@media (min-width: 720px) {
+  .project-list li {
+    display: grid;
+    grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .project-copy {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .project-preview {
+    grid-column: 2;
+    grid-row: 1;
+  }
 }
 
 .post-list {
