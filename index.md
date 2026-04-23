@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Bryan
+title: ByeByeBryan
 lede: Building games, graphics experiments, and AI tooling.
 eyebrow: dev.byebyebryan.com
 sections:
