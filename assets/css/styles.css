@@ -140,6 +140,10 @@ a:focus-visible {
   font-size: 1.05rem;
 }
 
+.project-name-static {
+  color: var(--fg);
+}
+
 .project-list p {
   margin: 0;
 }
