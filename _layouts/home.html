@@ -29,7 +29,11 @@ layout: default
                 </a>
               {% endif %}
               <div class="project-copy">
-                <a href="{{ project.url }}" class="project-name">{{ project.name }}</a>
+                {% if project.url %}
+                  <a href="{{ project.url }}" class="project-name">{{ project.name }}</a>
+                {% else %}
+                  <span class="project-name project-name-static">{{ project.name }}</span>
+                {% endif %}
                 <p>{{ project.description }}</p>
                 {% if project.links %}
                   <p class="project-links">
