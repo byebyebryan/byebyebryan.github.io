@@ -27,7 +27,7 @@ sections:
     projects:
       - name: Workstream Navigator
         description: A native-workflow terminal navigator for persistent Codex and OpenCode workstreams across local and SSH hosts.
-        url: https://github.com/byebyebryan/workstream-navigator
+        url: https://github.com/byebyebryan/wsnav
       - name: Agent Bookkeeper
         description: A reusable archive, transport, catalog, and provenance-aware search system for agent-session evidence.
         url: https://github.com/byebyebryan/agent-bookkeeper
