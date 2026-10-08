@@ -1,0 +1,115 @@
+{
+  "media": [
+    {
+      "file": "cubey-reel.mp4",
+      "source_repository": "https://github.com/byebyebryan/cubey",
+      "sources": [
+        {
+          "path": "docs/media/showcase/ocean.mp4",
+          "sha256": "dd0c33c65ba355c75da484875822fef2abf7dd2a61fc611b3b21671302216d6b"
+        },
+        {
+          "path": "docs/media/showcase/water-3d.mp4",
+          "sha256": "90d242578225647d82ae8041e32b63f66f9ac4797622d0413360c62d7f438ece"
+        },
+        {
+          "path": "docs/media/showcase/fire-3d.mp4",
+          "sha256": "3fc22accb5084a27acd7435d0ffbabbd597229cc3dcb555e83f831b1fa215348"
+        }
+      ],
+      "treatment": "First four seconds of each published source clip, in Ocean / Water 3D / Fire 3D order; native timing, 1024x576 at 30 fps, H.264 CRF 23, silent fast-start MP4",
+      "sha256": "0ebdf211d99785180a558e8962a838d30a9c40158f2e9b4876c5e6f4c230114f"
+    },
+    {
+      "file": "cubey-ocean.webp",
+      "source_repository": "https://github.com/byebyebryan/cubey",
+      "source_path": "docs/media/showcase/ocean.png",
+      "source_sha256": "40605723e7c51dc99f4c184442fdea2ad2cc50ee4d7edf6139e171cc78a10e0a",
+      "treatment": "WebP quality 85 conversion of the original poster",
+      "sha256": "895b308750b773d2b7eafb0f103daf9055ae608fff37c5bd32efdd84cdae4677"
+    },
+    {
+      "file": "cubey-ocean.jpg",
+      "source_repository": "https://github.com/byebyebryan/cubey",
+      "source_path": "docs/media/showcase/ocean.png",
+      "source_sha256": "40605723e7c51dc99f4c184442fdea2ad2cc50ee4d7edf6139e171cc78a10e0a",
+      "treatment": "JPEG conversion of the original poster for social link previews",
+      "sha256": "a1478103e334987037b1619cddf9265ce9fd7de871a4078149b96040eb40925d"
+    },
+    {
+      "file": "notification-panel.png",
+      "source_repository": "https://github.com/byebyebryan/esp32-349",
+      "source_path": "projects/notification-panel/design/neutral-theme-captures/notification-normal.png",
+      "treatment": "Unmodified native UI renderer preview with fixture notification and telemetry",
+      "sha256": "e07e16a89f71836cefd40984f04734ca64566f4c9a88c974f9ec4ca3844cc3b7"
+    },
+    {
+      "file": "rlcd-roster.png",
+      "source_repository": "https://github.com/byebyebryan/esp32-rlcd",
+      "source_path": "docs/evidence/2026-10-06-flashing-rows/demo-settled-00-initial-order.png",
+      "treatment": "Unmodified source media",
+      "sha256": "b87f4ad67934c9245127f0b7ab5df52cc25ba172e19aa3d1b5dbd025c4303bc9"
+    },
+    {
+      "file": "raster90-interactive.png",
+      "source_repository": "https://github.com/byebyebryan/raster90",
+      "source_path": "docs/media/raster90-interactive-wear5-opw3-466.png",
+      "treatment": "Unmodified source media",
+      "sha256": "334872ff2d45075241a344e05f626b3243e0690e9742430f70b5cf5da610b143"
+    },
+    {
+      "file": "raster90-ambient.png",
+      "source_repository": "https://github.com/byebyebryan/raster90",
+      "source_path": "docs/media/raster90-ambient-wear5-opw3-466.png",
+      "treatment": "Unmodified source media",
+      "sha256": "e466be3525a35f6b76003f9e6d80595cc6a85e9d5a8268f6da3e630edc2ee632"
+    },
+    {
+      "file": "gomoku2d.mp4",
+      "source_repository": "https://github.com/byebyebryan/gomoku2d",
+      "source_path": "docs/assets/readme-gameplay.gif",
+      "source_sha256": "ebeaeb88b05d3e2abae6ea303cea892d350e7419e0e2722fd1dcc53fa667a150",
+      "treatment": "H.264 conversion",
+      "sha256": "7d9d462703d34a5405542cff1db63576c48b960d7586201a96923356f86cca57"
+    },
+    {
+      "file": "gomoku2d.png",
+      "source_repository": "https://github.com/byebyebryan/gomoku2d",
+      "source_path": "docs/assets/readme-gameplay.gif",
+      "source_sha256": "ebeaeb88b05d3e2abae6ea303cea892d350e7419e0e2722fd1dcc53fa667a150",
+      "treatment": "First source frame",
+      "sha256": "24d5f28c653a9d270ce37fa5bf7c2779118f8a98548598c7f665dd6589bee92b"
+    },
+    {
+      "file": "powered-descent.svg",
+      "source_repository": "https://github.com/byebyebryan/powered-descent-lab",
+      "source_path": "outputs/eval/planner_v2_lab_suite/capture-session-repair-20261005-native/runs/v2_plateau_wide",
+      "source_sha256": "7faf718209d2ebe900204c0aba308a429c2a6061e9cf2a25d3a151cc4e5f32b3",
+      "input_identity": "fnv1a64:c17a2218c281cc8d",
+      "treatment": "Equal-scale SVG plot of all 466 retained flight samples, original terrain and three executed handoff states, with schematic vehicle marker; no simulation or flight changes",
+      "sha256": "1369b93c148a5b7e3306c88a10300f2599b5142bf138d64e3c0a686b660ae47f",
+      "scenario_sha256": "fa63b490e6759f60918dc6b98bac365987b8d9107d1383ef8411cc3b115c4ced",
+      "generator": "scripts/render-flight.py"
+    },
+    {
+      "file": "powered-descent.mp4",
+      "source_repository": "https://github.com/byebyebryan/powered-descent-lab",
+      "source_path": "outputs/eval/planner_v2_lab_suite/capture-session-repair-20261005-native/runs/v2_plateau_wide",
+      "source_sha256": "7faf718209d2ebe900204c0aba308a429c2a6061e9cf2a25d3a151cc4e5f32b3",
+      "input_identity": "fnv1a64:c17a2218c281cc8d",
+      "treatment": "Animation of the same retained samples selected without interpolation; six-times playback, 0.6s opening hold and 1.5s landing hold, 1024x576 at 30 fps, H.264 CRF 20; no simulation or flight changes",
+      "scenario_sha256": "fa63b490e6759f60918dc6b98bac365987b8d9107d1383ef8411cc3b115c4ced",
+      "generator": "scripts/render-flight.py",
+      "sha256": "a03456627470921d4a3edc8729ef9a4e92c2f05356f46bcca96337c11fed4832"
+    },
+    {
+      "file": "rofi-plus.png",
+      "source_repository": "https://github.com/byebyebryan/rofi-agent-plus",
+      "source_revision": "039933046b4acf0bc99852712dbbaa4cec9f61cc",
+      "treatment": "Actual render_snapshot output and Rofi renderer on an isolated Xvfb display; four invented preview sessions; no provider queries or actions",
+      "theme": "Owner-provided DMS-blue Rofi theme; preview font increased from 11 to 14 for readability",
+      "provider_icons": "CC0 Claude Code icon and MIT OpenAI icon; see source ASSETS.md",
+      "sha256": "eebdcd93e56956fc87e8c4db2cac79415dd906884adf1e94f53387965aa2340a"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # ByeByeBryan
 
-This is the legacy GitHub Pages site for `dev.byebyebryan.com`.
+A compact, visual project showcase at `dev.byebyebryan.com`.
 
 ## Prerequisites
 
@@ -32,7 +32,19 @@ bundle exec jekyll build --destination /tmp/byebyebryan-site
 - [`_config.yml`](_config.yml) contains the Jekyll configuration.
 - [`index.md`](index.md) contains the homepage content.
 - [`_layouts/`](_layouts) contains the page templates.
-- [`assets/`](assets) contains the stylesheet and project media.
+- [`assets/`](assets) contains the stylesheet, media controls and project captures.
+- [`assets/projects/manifest.json`](assets/projects/manifest.json) records media sources, hashes and preview boundaries.
 - [`CNAME`](CNAME) configures the custom domain.
 
 Pushes to `main` are deployed by GitHub Pages and published at <https://dev.byebyebryan.com>.
+
+## Content
+
+The homepage features six projects and a short tools strip. Keep each project
+caption to one sentence. Use project media and direct demo/code links; there are
+no long-form project pages or required update schedule. Renderer previews and
+simulated data must stay clearly identified.
+
+The flight clip is rendered from retained telemetry with
+[`scripts/render-flight.py`](scripts/render-flight.py); it does not rerun a
+simulation. Source paths, playback speed and media treatments are in the manifest.
