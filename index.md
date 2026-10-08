@@ -1,51 +1,82 @@
 ---
 layout: home
 title: ByeByeBryan
-lede: Building native tools, games, graphics experiments, and agent infrastructure.
-eyebrow: dev.byebyebryan.com
-sections:
-  - title: Games, graphics, and simulation
-    projects:
-      - name: Gomoku2D
-        description: A local-first browser Gomoku and Renju game with a Rust and WebAssembly rules core, configurable bots, tactical hints, and replay analysis.
-        url: https://github.com/byebyebryan/gomoku2d
-        image: /assets/projects/gomoku2d.gif
-        image_alt: Gomoku2D local match in progress on a pixel-art board.
-        links:
-          - label: play
-            url: https://gomoku2d.byebyebryan.com/
-      - name: Cubey
-        description: A native C++ and Vulkan GPU workbench for procedural graphics, simulation, and rendering experiments.
+lede: Games, graphics, simulation, and tools for my own desktop.
+projects:
+  - name: Cubey
+    kind: Graphics & simulation
+    description: Procedural worlds, rendering experiments, and GPU fluids in C++ and Vulkan.
+    media: video
+    video: /assets/projects/cubey-reel.mp4
+    image: /assets/projects/cubey-ocean.webp
+    image_alt: Cubey's spectral ocean, three-dimensional water and fire simulations.
+    links:
+      - label: Code
         url: https://github.com/byebyebryan/cubey
-      - name: Raster 90
-        description: A bitmap-first Wear OS 5 watch face for the OnePlus Watch 3, built from deterministic cell-matrix graphics with a fictional-hardware aesthetic.
-        url: https://github.com/byebyebryan/wear-os
-      - name: Powered Descent Lab
-        description: A native-first lab for deterministic rocket flight, controller development, scenario design, evaluation, and replay analysis.
+      - label: More demos
+        url: https://github.com/byebyebryan/cubey#showcase
+  - name: Gomoku2D
+    kind: Browser game
+    description: Gomoku and Renju with bots, tactical hints, and replay analysis.
+    media: video
+    video: /assets/projects/gomoku2d.mp4
+    image: /assets/projects/gomoku2d.png
+    image_alt: A Gomoku2D match with tactical hints and a bot response.
+    links:
+      - label: Play
+        url: https://gomoku2d.byebyebryan.com/
+      - label: Code
+        url: https://github.com/byebyebryan/gomoku2d
+  - name: Powered Descent Lab
+    kind: Flight research
+    description: Rocket guidance, terrain-aware planning, and deterministic flight evaluation.
+    media: video
+    video: /assets/projects/powered-descent.mp4
+    image: /assets/projects/powered-descent.svg
+    image_alt: Recorded rocket flight clearing a plateau, with three replans before touchdown. Playback at six times speed.
+    links:
+      - label: Code
         url: https://github.com/byebyebryan/powered-descent-lab
-  - title: Agent tools
-    projects:
-      - name: Workstream Navigator
-        description: A native-workflow terminal navigator for persistent Codex and OpenCode workstreams across local and SSH hosts.
-        url: https://github.com/byebyebryan/wsnav
-      - name: Agent Bookkeeper
-        description: A reusable archive, transport, catalog, and provenance-aware search system for agent-session evidence.
-        url: https://github.com/byebyebryan/agent-bookkeeper
-      - name: DMS Agent Picker
-        description: A DankMaterialShell launcher for resuming Codex, Claude Code, and OpenCode sessions across local and SSH hosts.
-        url: https://github.com/byebyebryan/dms-agent-picker
-  - title: Desktop and developer tools
-    projects:
-      - name: remote-chrome
-        description: Launch Chrome on a remote Linux host over Waypipe, with optional YubiKey forwarding for WebAuthn prompts.
-        url: https://github.com/byebyebryan/remote-chrome
-      - name: lazy-serializable
-        description: Header-only C++ serialization that declares fields once and supports JSON, binary, YAML, TOML, and more without code generation.
-        url: https://github.com/byebyebryan/lazy-serializable
-      - name: DMS Power Status
-        description: An adaptive battery and power widget with live wattage, charge-aware ETA, a 24-hour history chart, and session statistics.
-        url: https://github.com/byebyebryan/dms-power-status
-      - name: DMS SSH Plus
-        description: A DankMaterialShell SSH launcher that remembers successful hosts and can keep sessions alive across DMS restarts.
-        url: https://github.com/byebyebryan/dms-ssh-plus
+  - name: Rofi Plus
+    kind: Desktop tools
+    description: Pick up agent sessions, manage tmux, and connect across machines.
+    image: /assets/projects/rofi-plus.png
+    image_alt: Rofi Agent Plus displaying invented preview sessions across a workstation and laptop.
+    links:
+      - label: Agent
+        url: https://github.com/byebyebryan/rofi-agent-plus
+      - label: Tmux
+        url: https://github.com/byebyebryan/rofi-tmux-plus
+      - label: SSH
+        url: https://github.com/byebyebryan/rofi-ssh-plus
+      - label: Observer
+        url: https://github.com/byebyebryan/agent-observer
+  - name: Desk displays
+    kind: Hardware & interfaces
+    description: A USB notification panel and an experimental reflective agent-roster display.
+    media: displays
+    links:
+      - label: Notification panel
+        url: https://github.com/byebyebryan/esp32-349
+      - label: RLCD prototype
+        url: https://github.com/byebyebryan/esp32-rlcd
+  - name: Raster 90
+    kind: Wear OS & Amazfit
+    description: A bitmap watch face with its own pixel type and icon family.
+    media: watches
+    links:
+      - label: Code
+        url: https://github.com/byebyebryan/raster90
+      - label: Design
+        url: https://github.com/byebyebryan/raster90/blob/main/docs/watchface-design.md
+tools:
+  - name: remote-chrome
+    description: Remote Chrome, local window and notifications.
+    url: https://github.com/byebyebryan/remote-chrome
+  - name: lazy-serializable
+    description: Declare C++ fields once. Serialize in many formats.
+    url: https://github.com/byebyebryan/lazy-serializable
+  - name: DMS Power Status
+    description: Live battery draw, history, and charge-aware ETA.
+    url: https://github.com/byebyebryan/dms-power-status
 ---

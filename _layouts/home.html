@@ -3,113 +3,90 @@ layout: default
 ---
 
 <header class="hero">
-  <p class="eyebrow">
-    {{ page.eyebrow | default: site.url | replace: 'https://', '' }}
-  </p>
-  <h1>{{ page.title | default: site.title }}</h1>
-  {% if page.lede %}
-    <p class="lede">{{ page.lede }}</p>
-  {% endif %}
+  <div class="masthead">
+    <p class="eyebrow">dev.byebyebryan.com</p>
+    <div class="masthead-links">
+      <button class="motion-toggle" type="button" hidden>Pause motion</button>
+      <a href="https://github.com/{{ site.github_username }}">GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  <h1>{{ page.title }}</h1>
+  <p class="lede">{{ page.lede }}</p>
 </header>
 
-{% if page.sections %}
-  {% for section in page.sections %}
-    <section class="card">
-      <h2>{{ section.title }}</h2>
-      {% if section.body %}
-        {{ section.body | markdownify }}
-      {% endif %}
-      {% if section.projects %}
-        <ul class="project-list">
-          {% for project in section.projects %}
-            <li>
-              {% if project.image %}
-                <a href="{{ project.url }}" class="project-preview">
-                  <img src="{{ project.image | relative_url }}" alt="{{ project.image_alt | default: project.name }}" loading="lazy" />
-                </a>
-              {% endif %}
-              <div class="project-copy">
-                <a href="{{ project.url }}" class="project-name">{{ project.name }}</a>
-                <p>{{ project.description }}</p>
-                {% if project.links %}
-                  <p class="project-links">
-                    {% for link in project.links %}
-                      <a href="{{ link.url }}">{{ link.label }}</a>
-                    {% endfor %}
-                  </p>
-                {% endif %}
-              </div>
-            </li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-      {% if section.list %}
-        <ul>
-          {% for item in section.list %}
-            <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    </section>
-  {% endfor %}
-{% endif %}
+<section aria-labelledby="selected-work">
+  <h2 class="section-label" id="selected-work">Selected projects</h2>
+  <div class="project-grid">
+    {% for project in page.projects %}
+      <article class="project" aria-labelledby="project-{{ forloop.index }}">
+        <div class="project-media{% if project.media %} project-media--{{ project.media }}{% endif %}">
+          {% case project.media %}
+            {% when 'video' %}
+              <video class="project-video" controls loop muted playsinline preload="metadata"
+                poster="{{ project.image | relative_url }}" aria-label="{{ project.image_alt }}">
+                <source src="{{ project.video | relative_url }}" type="video/mp4" />
+                <a href="{{ project.video | relative_url }}">Watch the {{ project.name }} demo</a>
+              </video>
+            {% when 'displays' %}
+              <figure class="display-panel">
+                <img src="{{ '/assets/projects/notification-panel.png' | relative_url }}"
+                  alt="Notification-panel UI preview with status indicators, formatted text and touch actions."
+                  width="640" height="172" loading="lazy" />
+                <figcaption>Notification panel · UI preview</figcaption>
+              </figure>
+              <figure class="display-roster">
+                <img src="{{ '/assets/projects/rlcd-roster.png' | relative_url }}"
+                  alt="RLCD renderer preview showing blocked, waiting and working sessions from simulated data."
+                  width="400" height="300" loading="lazy" />
+                <figcaption>RLCD · simulated roster</figcaption>
+              </figure>
+            {% when 'watches' %}
+              <figure>
+                <img src="{{ '/assets/projects/raster90-interactive.png' | relative_url }}"
+                  alt="Raster 90 interactive bitmap face with weather, time, steps and battery."
+                  width="466" height="466" loading="lazy" />
+                <figcaption>Interactive</figcaption>
+              </figure>
+              <figure>
+                <img src="{{ '/assets/projects/raster90-ambient.png' | relative_url }}"
+                  alt="Raster 90 ambient bitmap face showing only the time."
+                  width="466" height="466" loading="lazy" />
+                <figcaption>Ambient</figcaption>
+              </figure>
+            {% else %}
+              <img src="{{ project.image | relative_url }}" alt="{{ project.image_alt }}" loading="lazy" />
+          {% endcase %}
+        </div>
+        <div class="project-copy">
+          <p class="project-kind">{{ project.kind }}</p>
+          <h3 id="project-{{ forloop.index }}">{{ project.name }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+          <nav class="project-links" aria-label="{{ project.name }} links">
+            {% for link in project.links %}
+              <a href="{{ link.url }}">{{ link.label }} <span aria-hidden="true">↗</span></a>
+            {% endfor %}
+          </nav>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
 
-{% if site.posts.size > 0 %}
-  <section class="card">
-    <h2>Latest posts</h2>
-    <ul class="post-list">
-      {% for post in site.posts limit: 5 %}
-        <li>
-          <div>
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-          </div>
-          {% assign summary = post.description | default: post.excerpt %}
-          {% if summary %}
-            <p>{{ summary | strip_html | truncate: 160 }}</p>
-          {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
-  </section>
-  {% assign grouped_projects = site.posts | group_by: "project" %}
-  {% assign has_projects = false %}
-  {% for project in grouped_projects %}
-    {% unless project.name == nil or project.name == "" %}
-      {% assign has_projects = true %}
-    {% endunless %}
-  {% endfor %}
-  {% if has_projects %}
-    <section class="card">
-      <h2>Posts by project</h2>
-      {% for project in grouped_projects %}
-        {% unless project.name == nil or project.name == "" %}
-          <div class="project-group">
-            <h3>{{ project.name }}</h3>
-            <ul class="post-list">
-              {% for post in project.items %}
-                <li>
-                  <div>
-                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                    <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-                  </div>
-                  {% if post.excerpt %}
-                    <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
-                  {% endif %}
-                </li>
-              {% endfor %}
-            </ul>
-          </div>
-        {% endunless %}
-      {% endfor %}
-    </section>
-  {% endif %}
-{% endif %}
+<section class="small-tools" aria-labelledby="small-tools">
+  <h2 class="section-label" id="small-tools">Small tools</h2>
+  <ul>
+    {% for tool in page.tools %}
+      <li>
+        <a href="{{ tool.url }}">{{ tool.name }} <span aria-hidden="true">↗</span></a>
+        <p>{{ tool.description }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
 
 <footer>
-  <p>
-    <a href="https://github.com/{{ site.github_username }}">
-      github.com/{{ site.github_username }}
-    </a>
-  </p>
+  <span>ByeByeBryan</span>
+  <a href="https://github.com/{{ site.github_username }}">github.com/{{ site.github_username }}</a>
 </footer>
+
+<script src="{{ '/assets/js/showcase.js' | relative_url }}" defer></script>

@@ -1,5 +1,5 @@
 title: ByeByeBryan
-description: Games, graphics, and AI tooling.
+description: Games, graphics, simulation, and tools for my own desktop.
 url: https://dev.byebyebryan.com
 baseurl: ""
 github_username: byebyebryan
@@ -19,3 +19,6 @@ defaults:
 theme: null
 plugins:
   - jekyll-feed
+
+exclude:
+  - scripts
