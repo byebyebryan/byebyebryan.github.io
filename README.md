@@ -47,7 +47,9 @@ simulated data must stay clearly identified.
 
 The flight clip is rendered from retained telemetry with
 [`scripts/render-flight.py`](scripts/render-flight.py); it does not rerun a
-simulation. The monochrome, Pylander-inspired animation uses `random-462` from
+simulation. The Pylander-inspired vector animation uses `random-462` from
 the October 8, 2026 procedural-terrain correction sweep, with receipt-checked
 inputs and a verified target landing. The vehicle is an enlarged presentation
-marker. Source paths, playback speed and media treatments are in the manifest.
+marker. White outlines on black use restrained red thrust, green landing pads
+and a cyan flight trail. Source paths, playback speed and media treatments are
+in the manifest.
