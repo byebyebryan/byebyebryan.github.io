@@ -69,16 +69,6 @@
       "sha256": "019c25a1821188a2ada6174ca3ee1b206094fae7216f9973c6d82afb3c057504"
     },
     {
-      "file": "raster90-watch3.png",
-      "source_path": "docs/media/raster90-interactive-watch3-centered-466.png",
-      "treatment": "Unmodified October 7, 2026 physical OnePlus Watch 3 screenshot: centered rows and live night-family weather. Still image; does not prove animation or sustained AOD.",
-      "source_capture_manifest": "docs/media/manifest.json",
-      "source_checkpoint": "docs/checkpoints/2026-10-07-centered-rows.md",
-      "source_repository": "https://github.com/byebyebryan/raster90",
-      "source_revision": "1eb7d9b3490fb9d7333d7d44b3bbc906fa40781a",
-      "sha256": "6b27baf5c5f916af7853a81024d0f304d9b7b3eb58058d5a70983ddf4e966939"
-    },
-    {
       "file": "gomoku2d.mp4",
       "source_repository": "https://github.com/byebyebryan/gomoku2d",
       "source_path": "docs/assets/readme-gameplay.gif",
