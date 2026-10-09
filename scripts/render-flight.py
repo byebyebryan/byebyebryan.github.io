@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
-"""Render retained flight telemetry; never run or modify a simulation.
+"""Render the retained random-462 flight without running a simulation.
 
 Usage: python3 scripts/render-flight.py RUN_DIRECTORY assets/projects
-Requires ffmpeg with librsvg support. The input directory contains flight.json
-and scenario.json. Animation selects recorded samples without interpolation.
+Requires ffmpeg with librsvg support. RUN_DIRECTORY is runs/random-462 in
+capture-terrain-correction-20261008-v1. Its receipt must authenticate the input
+scenario, feedback, attempt and command replay. Frames select recorded samples
+without interpolation; the enlarged vehicle is a presentation marker.
 """
 
 import bisect
+from hashlib import sha256
 import json
 import math
 from pathlib import Path
@@ -15,95 +18,133 @@ import sys
 import tempfile
 
 
-def render(run, output):
-    flight = json.loads((run / 'flight.json').read_text())
-    scenario = json.loads((run / 'scenario.json').read_text())
-    assert flight['physical_outcome'] == 'landed_on_target'
-    assert flight['mission_outcome'] == 'success'
-    assert flight['integrity_passed'] and flight['final_source_replay_passed']
-    assert flight['correction_count'] == 3
-    assert flight['input_identity'] == 'fnv1a64:c17a2218c281cc8d', 'Expected the retained plateau flight'
+SCENARIO_SHA256 = '603490ca2a7832c06dd6c383310898ad39cf770cfe1e444a10104c2dc28b875b'
+FEEDBACK_SHA256 = '6527a6d0fa94dcd0b5f40d902049df1559c0b25a227f36fabe73bb25ab9dfa78'
+FPS, SPEED, START_HOLD, END_HOLD = 30, 6, 0.6, 1.5
+
+
+def require(condition, message):
+    if not condition:
+        raise ValueError(message)
+
+
+def load_flight(run):
+    receipt = json.loads((run.parent.parent / 'receipt.json').read_text())['files']
+    inputs = {}
+    for name in ('scenario.json', 'feedback.json', 'attempt.json', 'command-replay.json'):
+        data = (run / name).read_bytes()
+        require(sha256(data).hexdigest() == receipt[f'runs/{run.name}/{name}'],
+                f'Receipt mismatch: {name}')
+        inputs[name] = json.loads(data)
+    scenario, flight = inputs['scenario.json'], inputs['feedback.json']
+    require(run.name == 'random-462', 'Expected the selected procedural-terrain case')
+    require(sha256((run / 'scenario.json').read_bytes()).hexdigest() == SCENARIO_SHA256,
+            'Expected the frozen mountains scenario')
+    require(sha256((run / 'feedback.json').read_bytes()).hexdigest() == FEEDBACK_SHA256,
+            'Expected the retained terrain-correction flight')
+    require(flight['scenario_sha256'] == SCENARIO_SHA256, 'Flight/scenario identity mismatch')
+    require(flight['candidate_id'] == 'ballistic_feedback_v3_terrain_correction',
+            'Expected the terrain-correction candidate')
+    require(scenario['metadata']['recipe'] == 'mountains_8x' and scenario['seed'] == 784925805,
+            'Expected the procedural terrain recipe and seed')
+    final = flight['final_state']
+    require(flight['stop'] == 'physical_terminal'
+            and final['physical_outcome'] == 'landed_on_target'
+            and final['mission_outcome'] == 'success', 'Flight did not land successfully')
+    require(flight['integrity_passed'] and flight['source_replay_passed']
+            and flight['decisions_reproduced'], 'Flight verification incomplete')
+    replay = inputs['command-replay.json']
+    require(replay['passed'] and replay['final_state'] == final, 'Command replay mismatch')
     samples = flight['ordinary_flight']['samples']
-    times = [sample['sim_time_s'] for sample in samples]
-    handoffs = [cycle['current_state'] for cycle in flight['cycles'][1:]]
-    scale = 878 / 1220
+    times = [s['sim_time_s'] for s in samples]
+    require(times[0] == 0 and all(a < b for a, b in zip(times, times[1:])),
+            'Sample times must start at zero and increase')
+    require(times[-1] == final['sim_time_s']
+            and samples[-1]['observation']['position_m'] == final['position_m'],
+            'Samples must include the final landing state')
+    return scenario, flight
+
+
+def render(run, output):
+    scenario, flight = load_flight(run)
+    samples = flight['ordinary_flight']['samples']
+    times = [s['sim_time_s'] for s in samples]
+    positions = [s['observation']['position_m'] for s in samples]
+    terrain = scenario['world']['terrain']['points_m']
+    points = terrain + positions
+    require(all(math.isfinite(p[axis]) for p in points for axis in ('x', 'y')),
+            'Geometry must be finite')
+    xmin, xmax = min(p['x'] for p in points), max(p['x'] for p in points)
+    ymin, ymax = min(p['y'] for p in points), max(p['y'] for p in points)
+    scale = min(916 / (xmax - xmin), 400 / (ymax - ymin))
+    midx, midy = (xmin + xmax) / 2, (ymin + ymax) / 2
 
     def point(position):
-        return 72 + (position['x'] + 1060) * scale, 480 - position['y'] * scale
+        return 512 + (position['x'] - midx) * scale, 304 - (position['y'] - midy) * scale
 
     def pairs(positions):
         return ' '.join(f'{x:.2f},{y:.2f}' for x, y in map(point, positions))
 
-    terrain = pairs(scenario['world']['terrain']['points_m'])
-    grid = ''.join(f'<path d="M72 {480-height*scale:.2f}H950"/>'
-                   for height in [0, 100, 200, 300, 400])
-    launch_x, _ = point(samples[0]['observation']['position_m'])
-    end_x, _ = point(samples[-1]['observation']['position_m'])
+    pads = []
+    for pad in scenario['world']['landing_pads']:
+        x, y = point({'x': pad['center_x_m'], 'y': pad['surface_y_m']})
+        width = pad['width_m'] * scale
+        pads.append(f'<path d="M{x-width/2:.2f} {y:.2f}h{width:.2f}" '
+                    'stroke="white" stroke-width="4"/>')
+    base = scenario['vehicle']['geometry']['touchdown_base_offset_m'] * scale
 
     def scene(index, poster=False):
         sample = samples[index]
-        current_time = times[index]
         observation = sample['observation']
         x, y = point(observation['position_m'])
-        trace = pairs(s['observation']['position_m'] for s in samples[:index + 1])
-        markers = []
-        for state in handoffs:
-            if state['sim_time_s'] <= current_time:
-                mx, my = point(state['position_m'])
-                markers.append(f'<circle cx="{mx:.2f}" cy="{my:.2f}" r="7" '
-                               'fill="#101a21" stroke="#ffbe78" stroke-width="2.5"/>')
+        # PD Lab angles tilt toward +x, which is positive SVG rotation.
         angle = math.degrees(observation['attitude_rad'])
         throttle = sample['held_command']['throttle_frac']
         plume = ''
         if throttle > 0 and index < len(samples) - 1:
-            length = 9 + 18 * throttle
-            plume = f'<path d="M-3 7L0 {length:.2f}L3 7" fill="#ffbe78"/>'
-        status = 'Target landing' if index == len(samples) - 1 else 'In flight'
-        clock = '900 m · 46.4 s' if poster else f'{current_time:04.1f} s / 46.4 s · 6× playback'
-        replan_label = 'replan' if len(markers) == 1 else 'replans'
+            length = (7 + 19 * throttle) * (1 + 0.1 * math.sin(times[index] * 37))
+            plume = f'<path d="M-3 {base+3:.2f}L0 {base+length:.2f}L3 {base+3:.2f}"/>'
+        trace = pairs(positions if poster else positions[:index + 1])
+        clock = f'{times[-1]:.1f} s · {SPEED}× playback' if poster else f'{times[index]:04.1f} / {times[-1]:.1f} s · {SPEED}×'
+        status = 'TARGET LANDING' if index == len(samples) - 1 else 'LIFTOFF' if times[index] < 4 else 'IN FLIGHT'
+        if poster:
+            status = 'RECORDED FLIGHT · VERIFIED LANDING'
         return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="576" viewBox="0 0 1024 576" role="img" aria-labelledby="title desc">
-<title id="title">Powered Descent Lab: recorded plateau flight</title>
-<desc id="desc">Retained policy-3 flight positions across a 900-metre transfer. Three replans clear a 315-metre plateau before a verified target landing. Both plot axes use the same scale. The vehicle marker is schematic.</desc>
-<rect width="1024" height="576" fill="#101a21"/>
-<g font-family="sans-serif" fill="#b4c7d0">
-<text x="72" y="65" font-size="15" letter-spacing="2">RECORDED FLIGHT</text>
-<text x="72" y="102" font-size="29" fill="#e8f1f4">Terrain-aware landing</text>
-<text x="950" y="66" text-anchor="end" font-size="16">{clock}</text>
-<g stroke="#24343e" stroke-width="1">{grid}</g>
-<polygon points="72,480 {terrain} 950,530 72,530" fill="#293a43"/>
-<polyline points="{terrain}" fill="none" stroke="#7f929b" stroke-width="2"/>
-<polyline points="{trace}" fill="none" stroke="#81dfca" stroke-width="3.5" stroke-linejoin="round"/>
-{''.join(markers)}
-<path d="M{launch_x - 14:.2f} 481h28M{end_x - 14:.2f} 481h28" stroke="#81dfca" stroke-width="3"/>
-<g transform="translate({x:.2f} {y:.2f}) rotate({angle:.2f})">
-{plume}<path d="M0-15L5-7V6H-5V-7Z" fill="#e8f1f4" stroke="#101a21" stroke-width="1.5"/>
-<path d="M-5 2L-9 9H-3M5 2L9 9H3" fill="#b4c7d0"/>
+<title id="title">Powered Descent Lab: procedural mountain flight</title>
+<desc id="desc">Custom monochrome telemetry visualization of random-462 from the October 8, 2026 terrain-correction sweep. A verified 1,200-metre transfer over procedural mountains. Original terrain, recorded positions and attitude, equal-scale axes, and an enlarged triangular vehicle anchored at its recorded touchdown base. Pylander-inspired vector styling; not a native application recording.</desc>
+<rect width="1024" height="576" fill="black"/>
+<g font-family="monospace" fill="white">
+<text x="40" y="49" font-size="24">Procedural terrain</text>
+<text x="984" y="48" text-anchor="end" font-size="15" opacity="0.7">{clock}</text>
+<polyline points="{pairs(terrain)}" fill="none" stroke="white" stroke-width="2.2" stroke-linejoin="round"/>
+{''.join(pads)}
+<polyline points="{trace}" fill="none" stroke="white" stroke-opacity="0.42" stroke-width="1.5" stroke-dasharray="2 6" stroke-linecap="round"/>
+<g transform="translate({x:.2f} {y:.2f}) rotate({angle:.2f})" fill="none" stroke="white" stroke-width="2.2" stroke-linejoin="round">
+{plume}<path d="M0 {base-24:.2f}L-9 {base:.2f}H9Z" fill="black"/>
 </g>
-<text x="{launch_x:.2f}" y="511" text-anchor="middle" font-size="14">Launch</text>
-<text x="{end_x:.2f}" y="511" text-anchor="middle" font-size="14">Touchdown</text>
-<circle cx="79" cy="553" r="4" fill="#81dfca"/><text x="93" y="558" font-size="14">{status}</text>
-<circle cx="256" cy="553" r="4" fill="none" stroke="#ffbe78" stroke-width="2"/><text x="270" y="558" font-size="14">{len(markers)} {replan_label}</text>
-<text x="950" y="558" text-anchor="end" font-size="13">v2_plateau_wide · policy 3</text>
+<text x="40" y="549" font-size="12" letter-spacing="1.3" opacity="0.55">TELEMETRY VISUALIZATION</text>
+<text x="984" y="549" text-anchor="end" font-size="12" letter-spacing="1" opacity="0.7">{status}</text>
 </g></svg>
 '''
 
     output.mkdir(parents=True, exist_ok=True)
-    (output / 'powered-descent.svg').write_text(scene(len(samples) - 1, poster=True))
-    fps, speed, start_hold, end_hold = 30, 6, 0.6, 1.5
-    duration = start_hold + times[-1] / speed + end_hold
+    poster_index = min(range(len(samples)), key=lambda i: abs(positions[i]['x'] - 760))
+    (output / 'powered-descent-terrain.svg').write_text(scene(poster_index, poster=True))
+    duration = START_HOLD + times[-1] / SPEED + END_HOLD
     with tempfile.TemporaryDirectory(prefix='devlog-flight-') as scratch:
         scratch = Path(scratch)
-        for frame in range(math.ceil(duration * fps)):
-            time = max(0, min(times[-1], (frame / fps - start_hold) * speed))
+        for frame in range(math.ceil(duration * FPS)):
+            time = max(0, min(times[-1], (frame / FPS - START_HOLD) * SPEED))
             index = max(0, bisect.bisect_right(times, time) - 1)
             (scratch / f'frame-{frame:04d}.svg').write_text(scene(index))
         subprocess.run([
-            'ffmpeg', '-v', 'error', '-y', '-framerate', str(fps),
+            'ffmpeg', '-v', 'error', '-y', '-framerate', str(FPS),
             '-i', str(scratch / 'frame-%04d.svg'), '-an', '-c:v', 'libx264',
             '-crf', '20', '-pix_fmt', 'yuv420p', '-movflags', '+faststart',
-            str(output / 'powered-descent.mp4'),
+            str(output / 'powered-descent-terrain.mp4'),
         ], check=True)
-    print(f'Rendered {len(samples)} retained samples, {len(handoffs)} replans; {duration:.1f}s clip.')
+    print(f'Rendered {len(samples)} retained samples and {len(terrain)} terrain vertices; '
+          f'{duration:.1f}s clip, {times[-1]:.1f}s verified landing.')
 
 
 if __name__ == '__main__':
