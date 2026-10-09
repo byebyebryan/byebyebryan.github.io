@@ -95,26 +95,122 @@
       "sha256": "24d5f28c653a9d270ce37fa5bf7c2779118f8a98548598c7f665dd6589bee92b"
     },
     {
-      "file": "powered-descent.svg",
+      "file": "powered-descent-terrain.svg",
       "source_repository": "https://github.com/byebyebryan/powered-descent-lab",
-      "source_path": "outputs/eval/planner_v2_lab_suite/capture-session-repair-20261005-native/runs/v2_plateau_wide",
-      "source_sha256": "7faf718209d2ebe900204c0aba308a429c2a6061e9cf2a25d3a151cc4e5f32b3",
-      "input_identity": "fnv1a64:c17a2218c281cc8d",
-      "treatment": "Equal-scale SVG plot of all 466 retained flight samples, original terrain and three executed handoff states, with schematic vehicle marker; no simulation or flight changes",
-      "sha256": "1369b93c148a5b7e3306c88a10300f2599b5142bf138d64e3c0a686b660ae47f",
-      "scenario_sha256": "fa63b490e6759f60918dc6b98bac365987b8d9107d1383ef8411cc3b115c4ced",
-      "generator": "scripts/render-flight.py"
+      "source_path": "outputs/eval/planner_v2_random_terrain/capture-terrain-correction-20261008-v1/runs/random-462",
+      "case_id": "random-462",
+      "capture_date": "2026-10-08",
+      "candidate_id": "ballistic_feedback_v3_terrain_correction",
+      "recipe": "mountains_8x",
+      "seed": 784925805,
+      "terrain_vertices": 389,
+      "terrain_relief_m": 504.1004062022417,
+      "recorded_samples": 638,
+      "flight_duration_s": 63.63333333333333,
+      "scenario_sha256": "603490ca2a7832c06dd6c383310898ad39cf770cfe1e444a10104c2dc28b875b",
+      "sources": [
+        {
+          "path": "scenario.json",
+          "sha256": "603490ca2a7832c06dd6c383310898ad39cf770cfe1e444a10104c2dc28b875b"
+        },
+        {
+          "path": "feedback.json",
+          "sha256": "6527a6d0fa94dcd0b5f40d902049df1559c0b25a227f36fabe73bb25ab9dfa78"
+        },
+        {
+          "path": "attempt.json",
+          "sha256": "fd0e7935241afdb15338f06add97397b68c0f26b06b7f8de4c96e493cb759d37"
+        },
+        {
+          "path": "command-replay.json",
+          "sha256": "c86304f67eec8a0a7aabc8d497e49d2a734601bc47843f64514b84949a56b2a7"
+        }
+      ],
+      "capture_manifest_sha256": "c239b6f776434c0584d3bf8f53d43797b0caec57793aa6b608ba264196a0b93e",
+      "capture_receipt_sha256": "20c474ff79bf722d9bbd6a0e46fab5fbd867f510c88ac7b593df08cd39110afe",
+      "content_source": {
+        "executable_sha256": "96b08b2e605a318a8d3d68b41ba37e344e203c4cbcb0331aa2310bce051e5376",
+        "git_commit": "4267f0b181b688be4638782ebb3a91339c8e658f",
+        "git_dirty": true,
+        "rust_source_tree_sha256": "9b9ab115b816aea4f127f9d6e7f445c4398b2ad17b4c8dc08002cc12235025c6"
+      },
+      "verification": {
+        "stop": "physical_terminal",
+        "physical_outcome": "landed_on_target",
+        "mission_outcome": "success",
+        "integrity_passed": true,
+        "source_replay_passed": true,
+        "decisions_reproduced": true,
+        "command_replay_passed": true
+      },
+      "evidence_scope": "Selected simulation flight from an opt-in terrain-correction experiment; custom telemetry visualization, not a native application recording or default-policy claim.",
+      "style_reference": {
+        "repository": "https://github.com/byebyebryan/pylander",
+        "path": "game/ui/renderer.py",
+        "sha256": "f1a95f9777e2c07bbbac60c7730d5cad8e0a4773aef62d4810079ec6a2ac1f68"
+      },
+      "generator": "scripts/render-flight.py",
+      "treatment": "Monochrome SVG of the original 389 terrain vertices and all 638 recorded flight positions, with a midflight presentation marker; equal-scale geometry and original recorded attitude. Pylander-inspired terrain outlines and triangular vehicle, enlarged to 18x24 pixels and anchored at the recorded touchdown base. Thrust length follows recorded throttle with deterministic decorative flicker. No simulation or flight changes.",
+      "sha256": "d3479e6194b6f8bd62f9d7e5218bab6a6d2714a148b063377f8c2cae4d4b8eb6"
     },
     {
-      "file": "powered-descent.mp4",
+      "file": "powered-descent-terrain.mp4",
       "source_repository": "https://github.com/byebyebryan/powered-descent-lab",
-      "source_path": "outputs/eval/planner_v2_lab_suite/capture-session-repair-20261005-native/runs/v2_plateau_wide",
-      "source_sha256": "7faf718209d2ebe900204c0aba308a429c2a6061e9cf2a25d3a151cc4e5f32b3",
-      "input_identity": "fnv1a64:c17a2218c281cc8d",
-      "treatment": "Animation of the same retained samples selected without interpolation; six-times playback, 0.6s opening hold and 1.5s landing hold, 1024x576 at 30 fps, H.264 CRF 20; no simulation or flight changes",
-      "scenario_sha256": "fa63b490e6759f60918dc6b98bac365987b8d9107d1383ef8411cc3b115c4ced",
+      "source_path": "outputs/eval/planner_v2_random_terrain/capture-terrain-correction-20261008-v1/runs/random-462",
+      "case_id": "random-462",
+      "capture_date": "2026-10-08",
+      "candidate_id": "ballistic_feedback_v3_terrain_correction",
+      "recipe": "mountains_8x",
+      "seed": 784925805,
+      "terrain_vertices": 389,
+      "terrain_relief_m": 504.1004062022417,
+      "recorded_samples": 638,
+      "flight_duration_s": 63.63333333333333,
+      "scenario_sha256": "603490ca2a7832c06dd6c383310898ad39cf770cfe1e444a10104c2dc28b875b",
+      "sources": [
+        {
+          "path": "scenario.json",
+          "sha256": "603490ca2a7832c06dd6c383310898ad39cf770cfe1e444a10104c2dc28b875b"
+        },
+        {
+          "path": "feedback.json",
+          "sha256": "6527a6d0fa94dcd0b5f40d902049df1559c0b25a227f36fabe73bb25ab9dfa78"
+        },
+        {
+          "path": "attempt.json",
+          "sha256": "fd0e7935241afdb15338f06add97397b68c0f26b06b7f8de4c96e493cb759d37"
+        },
+        {
+          "path": "command-replay.json",
+          "sha256": "c86304f67eec8a0a7aabc8d497e49d2a734601bc47843f64514b84949a56b2a7"
+        }
+      ],
+      "capture_manifest_sha256": "c239b6f776434c0584d3bf8f53d43797b0caec57793aa6b608ba264196a0b93e",
+      "capture_receipt_sha256": "20c474ff79bf722d9bbd6a0e46fab5fbd867f510c88ac7b593df08cd39110afe",
+      "content_source": {
+        "executable_sha256": "96b08b2e605a318a8d3d68b41ba37e344e203c4cbcb0331aa2310bce051e5376",
+        "git_commit": "4267f0b181b688be4638782ebb3a91339c8e658f",
+        "git_dirty": true,
+        "rust_source_tree_sha256": "9b9ab115b816aea4f127f9d6e7f445c4398b2ad17b4c8dc08002cc12235025c6"
+      },
+      "verification": {
+        "stop": "physical_terminal",
+        "physical_outcome": "landed_on_target",
+        "mission_outcome": "success",
+        "integrity_passed": true,
+        "source_replay_passed": true,
+        "decisions_reproduced": true,
+        "command_replay_passed": true
+      },
+      "evidence_scope": "Selected simulation flight from an opt-in terrain-correction experiment; custom telemetry visualization, not a native application recording or default-policy claim.",
+      "style_reference": {
+        "repository": "https://github.com/byebyebryan/pylander",
+        "path": "game/ui/renderer.py",
+        "sha256": "f1a95f9777e2c07bbbac60c7730d5cad8e0a4773aef62d4810079ec6a2ac1f68"
+      },
       "generator": "scripts/render-flight.py",
-      "sha256": "a03456627470921d4a3edc8729ef9a4e92c2f05356f46bcca96337c11fed4832"
+      "treatment": "Monochrome animation selecting retained samples without interpolation; six-times playback, 0.6s opening hold and 1.5s landing hold, 1024x576 at 30 fps, silent fast-start H.264 CRF 20. Pylander-inspired terrain outlines and triangular vehicle, enlarged to 18x24 pixels and anchored at the recorded touchdown base. Thrust length follows recorded throttle with deterministic decorative flicker. No simulation or flight changes.",
+      "sha256": "45f8915d16abac0f0d39383630d8c7913471a4c368de806afc91af3402fbf2ae"
     },
     {
       "file": "rofi-plus.png",

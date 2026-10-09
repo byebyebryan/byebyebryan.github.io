@@ -19,9 +19,9 @@ projects:
     kind: Flight research
     description: Rocket guidance, terrain-aware planning, and deterministic flight evaluation.
     media: video
-    video: /assets/projects/powered-descent.mp4
-    image: /assets/projects/powered-descent.svg
-    image_alt: Recorded rocket flight clearing a plateau, with three replans before touchdown. Playback at six times speed.
+    video: /assets/projects/powered-descent-terrain.mp4
+    image: /assets/projects/powered-descent-terrain.svg
+    image_alt: White vector lander crossing procedural mountains on black, rendered from a verified flight at six times speed.
     links:
       - label: Code
         url: https://github.com/byebyebryan/powered-descent-lab
