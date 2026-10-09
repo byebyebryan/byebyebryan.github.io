@@ -42,16 +42,18 @@ layout: default
               </figure>
             {% when 'watches' %}
               <figure>
-                <img src="{{ '/assets/projects/raster90-interactive.png' | relative_url }}"
-                  alt="Raster 90 interactive bitmap face with weather, time, steps and battery."
+                <img src="{{ '/assets/projects/raster90-preview.png' | relative_url }}"
+                  data-still-src="{{ '/assets/projects/raster90-preview.png' | relative_url }}"
+                  data-motion-src="{{ '/assets/projects/raster90-preview.gif' | relative_url }}"
+                  alt="Generated Raster 90 composition with canonical partly-day weather animation, date, time, steps and battery."
                   width="466" height="466" loading="lazy" />
-                <figcaption>Interactive</figcaption>
+                <figcaption>Generated preview · loop</figcaption>
               </figure>
               <figure>
-                <img src="{{ '/assets/projects/raster90-ambient.png' | relative_url }}"
-                  alt="Raster 90 ambient bitmap face showing only the time."
+                <img src="{{ '/assets/projects/raster90-watch3.png' | relative_url }}"
+                  alt="October 7 physical OnePlus Watch 3 screenshot showing Raster 90's centered rows and night weather."
                   width="466" height="466" loading="lazy" />
-                <figcaption>Ambient</figcaption>
+                <figcaption>OnePlus Watch 3</figcaption>
               </figure>
             {% else %}
               <img src="{{ project.image | relative_url }}" alt="{{ project.image_alt }}" loading="lazy" />
