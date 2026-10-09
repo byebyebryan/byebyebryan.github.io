@@ -60,6 +60,3 @@ Provider marks identify providers and retain their respective owners.
 Raster 90 original artwork, generated composition and animation
 CC0 1.0 Universal
 https://github.com/byebyebryan/raster90/blob/1eb7d9b3490fb9d7333d7d44b3bbc906fa40781a/LICENSES/CC0-1.0.txt
-
-The Watch 3 image is an unretouched physical screenshot. The dedication covers
-Raster 90 artwork, with platform UI retaining its own terms.

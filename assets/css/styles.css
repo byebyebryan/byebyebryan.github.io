@@ -46,9 +46,9 @@ figcaption { text-align: center; margin-top: 5px; font-size: 9px; color: var(--m
 .display-panel img { border: 1px solid #424a4e; }
 .display-roster img { image-rendering: pixelated; border: 1px solid #6b7172; }
 .display-roster figcaption { white-space: nowrap; }
-.project-media--watches { display: flex; align-items: center; justify-content: center; gap: 24px; padding: 28px 30px; background: #000; }
-.project-media--watches figure { width: 45%; }
-.project-media--watches img { display: block; width: 100%; height: auto; image-rendering: pixelated; }
+.project-media--watches { display: flex; align-items: center; justify-content: center; padding: 16px; background: #000; }
+.project-media--watches figure { display: flex; flex-direction: column; align-items: center; height: 100%; min-height: 0; max-width: 100%; }
+.project-media--watches img { display: block; width: auto; max-width: 100%; min-height: 0; height: calc(100% - 20px); object-fit: contain; image-rendering: pixelated; }
 .small-tools { margin-top: 52px; padding: 26px 0 32px; border-top: 1px solid var(--line); }
 .small-tools ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 25px; margin: 0; padding: 0; list-style: none; }
 .small-tools a { font-size: 14px; font-weight: 500; }
