@@ -51,18 +51,32 @@
       "sha256": "b87f4ad67934c9245127f0b7ab5df52cc25ba172e19aa3d1b5dbd025c4303bc9"
     },
     {
-      "file": "raster90-interactive.png",
+      "file": "raster90-preview.gif",
+      "source_path": "icons/raster90/preview/icon-family-native-face-466.gif",
+      "treatment": "Unmodified canonical-art generated composition; eight partly-day weather phases at 4 fps with a one-second resting gap. Presentation loop, not device footage or Amazfit animation.",
+      "license": "CC0-1.0",
       "source_repository": "https://github.com/byebyebryan/raster90",
-      "source_path": "docs/media/raster90-interactive-wear5-opw3-466.png",
-      "treatment": "Unmodified source media",
-      "sha256": "334872ff2d45075241a344e05f626b3243e0690e9742430f70b5cf5da610b143"
+      "source_revision": "1eb7d9b3490fb9d7333d7d44b3bbc906fa40781a",
+      "sha256": "682e682597b8be38a6cfc99e7850bde173010255e7bc76efa86de87f56e2915b"
     },
     {
-      "file": "raster90-ambient.png",
+      "file": "raster90-preview.png",
+      "source_path": "fonts/raster90/preview/family-native-face-466.png",
+      "treatment": "Unmodified generated composition; static fallback for paused, offscreen, no-JavaScript and reduced-motion viewing.",
+      "license": "CC0-1.0",
       "source_repository": "https://github.com/byebyebryan/raster90",
-      "source_path": "docs/media/raster90-ambient-wear5-opw3-466.png",
-      "treatment": "Unmodified source media",
-      "sha256": "e466be3525a35f6b76003f9e6d80595cc6a85e9d5a8268f6da3e630edc2ee632"
+      "source_revision": "1eb7d9b3490fb9d7333d7d44b3bbc906fa40781a",
+      "sha256": "019c25a1821188a2ada6174ca3ee1b206094fae7216f9973c6d82afb3c057504"
+    },
+    {
+      "file": "raster90-watch3.png",
+      "source_path": "docs/media/raster90-interactive-watch3-centered-466.png",
+      "treatment": "Unmodified October 7, 2026 physical OnePlus Watch 3 screenshot: centered rows and live night-family weather. Still image; does not prove animation or sustained AOD.",
+      "source_capture_manifest": "docs/media/manifest.json",
+      "source_checkpoint": "docs/checkpoints/2026-10-07-centered-rows.md",
+      "source_repository": "https://github.com/byebyebryan/raster90",
+      "source_revision": "1eb7d9b3490fb9d7333d7d44b3bbc906fa40781a",
+      "sha256": "6b27baf5c5f916af7853a81024d0f304d9b7b3eb58058d5a70983ddf4e966939"
     },
     {
       "file": "gomoku2d.mp4",

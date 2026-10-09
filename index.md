@@ -65,10 +65,10 @@ projects:
     description: A bitmap watch face with its own pixel type and icon family.
     media: watches
     links:
+      - label: Visuals & assets
+        url: https://dev.byebyebryan.com/raster90/
       - label: Code
         url: https://github.com/byebyebryan/raster90
-      - label: Design
-        url: https://github.com/byebyebryan/raster90/blob/main/docs/watchface-design.md
 tools:
   - name: remote-chrome
     description: Remote Chrome, local window and notifications.

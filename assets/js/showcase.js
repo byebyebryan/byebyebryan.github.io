@@ -1,7 +1,8 @@
 (() => {
   const videos = [...document.querySelectorAll('.project-video')];
+  const images = [...document.querySelectorAll('img[data-motion-src]')];
   const button = document.querySelector('.motion-toggle');
-  if (!videos.length || !button || !('IntersectionObserver' in window)) return;
+  if ((!videos.length && !images.length) || !button || !('IntersectionObserver' in window)) return;
 
   const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
   let paused = preference.matches;
@@ -15,6 +16,11 @@
       } else if (!manuallyPaused.has(video)) {
         video.play().catch(() => {});
       }
+    }
+    for (const image of images) {
+      const source = paused || document.hidden || !visible.has(image)
+        ? image.dataset.stillSrc : image.dataset.motionSrc;
+      if (image.getAttribute('src') !== source) image.src = source;
     }
     button.textContent = paused ? 'Play motion' : 'Pause motion';
   }
@@ -45,5 +51,6 @@
     video.addEventListener('play', () => manuallyPaused.delete(video));
     observer.observe(video);
   });
+  images.forEach(image => observer.observe(image));
   sync();
 })();
