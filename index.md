@@ -15,6 +15,16 @@ projects:
         url: https://github.com/byebyebryan/cubey
       - label: More demos
         url: https://github.com/byebyebryan/cubey#showcase
+  - name: Powered Descent Lab
+    kind: Flight research
+    description: Rocket guidance, terrain-aware planning, and deterministic flight evaluation.
+    media: video
+    video: /assets/projects/powered-descent.mp4
+    image: /assets/projects/powered-descent.svg
+    image_alt: Recorded rocket flight clearing a plateau, with three replans before touchdown. Playback at six times speed.
+    links:
+      - label: Code
+        url: https://github.com/byebyebryan/powered-descent-lab
   - name: Gomoku2D
     kind: Browser game
     description: Gomoku and Renju with bots, tactical hints, and replay analysis.
@@ -27,16 +37,24 @@ projects:
         url: https://gomoku2d.byebyebryan.com/
       - label: Code
         url: https://github.com/byebyebryan/gomoku2d
-  - name: Powered Descent Lab
-    kind: Flight research
-    description: Rocket guidance, terrain-aware planning, and deterministic flight evaluation.
-    media: video
-    video: /assets/projects/powered-descent.mp4
-    image: /assets/projects/powered-descent.svg
-    image_alt: Recorded rocket flight clearing a plateau, with three replans before touchdown. Playback at six times speed.
+  - name: Raster 90
+    kind: Wear OS & Amazfit
+    description: A bitmap watch face with its own pixel type and icon family.
+    media: watches
     links:
+      - label: Visuals & assets
+        url: https://dev.byebyebryan.com/raster90/
       - label: Code
-        url: https://github.com/byebyebryan/powered-descent-lab
+        url: https://github.com/byebyebryan/raster90
+  - name: Desk displays
+    kind: Hardware & interfaces
+    description: A USB notification panel and an experimental reflective agent-roster display.
+    media: displays
+    links:
+      - label: Notification panel
+        url: https://github.com/byebyebryan/esp32-349
+      - label: RLCD prototype
+        url: https://github.com/byebyebryan/esp32-rlcd
   - name: Rofi Plus
     kind: Desktop tools
     description: Pick up agent sessions, manage tmux, and connect across machines.
@@ -51,24 +69,6 @@ projects:
         url: https://github.com/byebyebryan/rofi-ssh-plus
       - label: Observer
         url: https://github.com/byebyebryan/agent-observer
-  - name: Desk displays
-    kind: Hardware & interfaces
-    description: A USB notification panel and an experimental reflective agent-roster display.
-    media: displays
-    links:
-      - label: Notification panel
-        url: https://github.com/byebyebryan/esp32-349
-      - label: RLCD prototype
-        url: https://github.com/byebyebryan/esp32-rlcd
-  - name: Raster 90
-    kind: Wear OS & Amazfit
-    description: A bitmap watch face with its own pixel type and icon family.
-    media: watches
-    links:
-      - label: Visuals & assets
-        url: https://dev.byebyebryan.com/raster90/
-      - label: Code
-        url: https://github.com/byebyebryan/raster90
 tools:
   - name: remote-chrome
     description: Remote Chrome, local window and notifications.
