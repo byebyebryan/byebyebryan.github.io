@@ -21,6 +21,7 @@ import tempfile
 SCENARIO_SHA256 = '603490ca2a7832c06dd6c383310898ad39cf770cfe1e444a10104c2dc28b875b'
 FEEDBACK_SHA256 = '6527a6d0fa94dcd0b5f40d902049df1559c0b25a227f36fabe73bb25ab9dfa78'
 FPS, SPEED, START_HOLD, END_HOLD = 30, 6, 0.6, 1.5
+THRUST_COLOR, PAD_COLOR, TRAIL_COLOR = '#ff5b54', '#7ce39b', '#70cddd'
 
 
 def require(condition, message):
@@ -90,7 +91,7 @@ def render(run, output):
         x, y = point({'x': pad['center_x_m'], 'y': pad['surface_y_m']})
         width = pad['width_m'] * scale
         pads.append(f'<path d="M{x-width/2:.2f} {y:.2f}h{width:.2f}" '
-                    'stroke="white" stroke-width="4"/>')
+                    f'stroke="{PAD_COLOR}" stroke-width="4"/>')
     base = scenario['vehicle']['geometry']['touchdown_base_offset_m'] * scale
 
     def scene(index, poster=False):
@@ -103,7 +104,8 @@ def render(run, output):
         plume = ''
         if throttle > 0 and index < len(samples) - 1:
             length = (7 + 19 * throttle) * (1 + 0.1 * math.sin(times[index] * 37))
-            plume = f'<path d="M-3 {base+3:.2f}L0 {base+length:.2f}L3 {base+3:.2f}"/>'
+            plume = (f'<path d="M-3 {base+3:.2f}L0 {base+length:.2f}L3 {base+3:.2f}" '
+                     f'stroke="{THRUST_COLOR}" stroke-width="2.6"/>')
         trace = pairs(positions if poster else positions[:index + 1])
         clock = f'{times[-1]:.1f} s · {SPEED}× playback' if poster else f'{times[index]:04.1f} / {times[-1]:.1f} s · {SPEED}×'
         status = 'TARGET LANDING' if index == len(samples) - 1 else 'LIFTOFF' if times[index] < 4 else 'IN FLIGHT'
@@ -111,14 +113,14 @@ def render(run, output):
             status = 'RECORDED FLIGHT · VERIFIED LANDING'
         return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="576" viewBox="0 0 1024 576" role="img" aria-labelledby="title desc">
 <title id="title">Powered Descent Lab: procedural mountain flight</title>
-<desc id="desc">Custom monochrome telemetry visualization of random-462 from the October 8, 2026 terrain-correction sweep. A verified 1,200-metre transfer over procedural mountains. Original terrain, recorded positions and attitude, equal-scale axes, and an enlarged triangular vehicle anchored at its recorded touchdown base. Pylander-inspired vector styling; not a native application recording.</desc>
+<desc id="desc">Custom vector telemetry visualization of random-462 from the October 8, 2026 terrain-correction sweep. A verified 1,200-metre transfer over procedural mountains. Original terrain, recorded positions and attitude, equal-scale axes, and an enlarged triangular vehicle anchored at its recorded touchdown base. Pylander-inspired white outlines on black with red thrust, green landing pads and a cyan flight trail; not a native application recording.</desc>
 <rect width="1024" height="576" fill="black"/>
 <g font-family="monospace" fill="white">
 <text x="40" y="49" font-size="24">Procedural terrain</text>
 <text x="984" y="48" text-anchor="end" font-size="15" opacity="0.7">{clock}</text>
 <polyline points="{pairs(terrain)}" fill="none" stroke="white" stroke-width="2.2" stroke-linejoin="round"/>
 {''.join(pads)}
-<polyline points="{trace}" fill="none" stroke="white" stroke-opacity="0.42" stroke-width="1.5" stroke-dasharray="2 6" stroke-linecap="round"/>
+<polyline points="{trace}" fill="none" stroke="{TRAIL_COLOR}" stroke-opacity="0.6" stroke-width="1.5" stroke-dasharray="2 6" stroke-linecap="round"/>
 <g transform="translate({x:.2f} {y:.2f}) rotate({angle:.2f})" fill="none" stroke="white" stroke-width="2.2" stroke-linejoin="round">
 {plume}<path d="M0 {base-24:.2f}L-9 {base:.2f}H9Z" fill="black"/>
 </g>

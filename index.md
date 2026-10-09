@@ -19,9 +19,9 @@ projects:
     kind: Flight research
     description: Rocket guidance, terrain-aware planning, and deterministic flight evaluation.
     media: video
-    video: /assets/projects/powered-descent-terrain.mp4
-    image: /assets/projects/powered-descent-terrain.svg
-    image_alt: White vector lander crossing procedural mountains on black, rendered from a verified flight at six times speed.
+    video: /assets/projects/powered-descent-terrain.mp4?v=3d765571fb
+    image: /assets/projects/powered-descent-terrain.svg?v=634efd128e
+    image_alt: White vector lander with red thrust, green landing pads and a cyan flight trail across procedural mountains on black. Verified flight at six times speed.
     links:
       - label: Code
         url: https://github.com/byebyebryan/powered-descent-lab

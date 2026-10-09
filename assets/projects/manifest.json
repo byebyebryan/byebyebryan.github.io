@@ -150,8 +150,15 @@
         "sha256": "f1a95f9777e2c07bbbac60c7730d5cad8e0a4773aef62d4810079ec6a2ac1f68"
       },
       "generator": "scripts/render-flight.py",
-      "treatment": "Monochrome SVG of the original 389 terrain vertices and all 638 recorded flight positions, with a midflight presentation marker; equal-scale geometry and original recorded attitude. Pylander-inspired terrain outlines and triangular vehicle, enlarged to 18x24 pixels and anchored at the recorded touchdown base. Thrust length follows recorded throttle with deterministic decorative flicker. No simulation or flight changes.",
-      "sha256": "d3479e6194b6f8bd62f9d7e5218bab6a6d2714a148b063377f8c2cae4d4b8eb6"
+      "treatment": "Vector SVG of the original 389 terrain vertices and all 638 recorded flight positions, with a midflight presentation marker; equal-scale geometry and original recorded attitude. Pylander-inspired terrain outlines and triangular vehicle, enlarged to 18x24 pixels and anchored at the recorded touchdown base. Thrust length follows recorded throttle with deterministic decorative flicker. No simulation or flight changes. White outlines on black with restrained red thrust, green landing pads and a cyan flight trail.",
+      "sha256": "634efd128e9799eea3473097359b9401e30e2d0011627c7360336ab9ec5fedfe",
+      "palette": {
+        "background": "#000000",
+        "outlines": "#ffffff",
+        "thrust": "#ff5b54",
+        "landing_pads": "#7ce39b",
+        "flight_trail": "#70cddd"
+      }
     },
     {
       "file": "powered-descent-terrain.mp4",
@@ -209,8 +216,15 @@
         "sha256": "f1a95f9777e2c07bbbac60c7730d5cad8e0a4773aef62d4810079ec6a2ac1f68"
       },
       "generator": "scripts/render-flight.py",
-      "treatment": "Monochrome animation selecting retained samples without interpolation; six-times playback, 0.6s opening hold and 1.5s landing hold, 1024x576 at 30 fps, silent fast-start H.264 CRF 20. Pylander-inspired terrain outlines and triangular vehicle, enlarged to 18x24 pixels and anchored at the recorded touchdown base. Thrust length follows recorded throttle with deterministic decorative flicker. No simulation or flight changes.",
-      "sha256": "45f8915d16abac0f0d39383630d8c7913471a4c368de806afc91af3402fbf2ae"
+      "treatment": "Vector animation selecting retained samples without interpolation; six-times playback, 0.6s opening hold and 1.5s landing hold, 1024x576 at 30 fps, silent fast-start H.264 CRF 20. Pylander-inspired terrain outlines and triangular vehicle, enlarged to 18x24 pixels and anchored at the recorded touchdown base. Thrust length follows recorded throttle with deterministic decorative flicker. No simulation or flight changes. White outlines on black with restrained red thrust, green landing pads and a cyan flight trail.",
+      "sha256": "3d765571fb0546c21286ccd1af76dfee18f917ec7546b4589ceaa16cd7ec5ef5",
+      "palette": {
+        "background": "#000000",
+        "outlines": "#ffffff",
+        "thrust": "#ff5b54",
+        "landing_pads": "#7ce39b",
+        "flight_trail": "#70cddd"
+      }
     },
     {
       "file": "rofi-plus.png",
