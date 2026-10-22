@@ -1,25 +1,38 @@
 # ByeByeBryan
 
-A compact, visual project showcase at `dev.byebyebryan.com`.
+**[Visit the live site →](https://dev.byebyebryan.com/)**
 
-## Prerequisites
+Source for my visual project showcase: games, graphics, simulation, desktop
+tools, and desk displays. Built with Jekyll and published through GitHub Pages.
 
-- Ruby 3.4.10 (or another Ruby version supported by the locked dependencies)
-- Bundler 4.x
+## Selected projects
+
+| Project | Focus |
+| --- | --- |
+| Cubey | Procedural worlds, Vulkan rendering, and GPU fluids. |
+| Powered Descent Lab | Rocket guidance and terrain-aware flight planning. |
+| Gomoku2D | Gomoku, Renju, bots, and replay analysis. |
+| Raster 90 | A bitmap watch face with its own pixel type and icons. |
+| Codex Plus | Workers, watches, later checks, peer messages, and browser reports. |
+| Desk displays | A USB notification panel and a live RLCD agent dashboard. |
+| Observer Core | Mesh Plus, Tmux Observer, and Agent Observer. |
+| Rofi Plus | SSH Plus, Tmux Plus, and Agent Plus. |
+
+The homepage also has a small-tools strip. Observer Core and Rofi Plus are
+showcase groupings; their components keep separate repositories and
+responsibilities. Codex Plus and Raster 90 link to their own project sites.
 
 ## Local development
 
-Install the locked dependencies:
+Requires Ruby 3.4.10 (or another version supported by the locked dependencies)
+and Bundler 4.x. Install dependencies and start a local preview:
 
 ```sh
 bundle install
-```
-
-Serve the site locally at <http://localhost:4000>:
-
-```sh
 bundle exec jekyll serve
 ```
+
+Open <http://localhost:4000>. Jekyll rebuilds the preview when source files change.
 
 Build the site into a temporary directory without touching the ignored `_site/` directory:
 
@@ -27,40 +40,36 @@ Build the site into a temporary directory without touching the ignored `_site/` 
 bundle exec jekyll build --destination /tmp/byebyebryan-site
 ```
 
-## Source locations
+## Editing the site
 
-- [`_config.yml`](_config.yml) contains the Jekyll configuration.
-- [`index.md`](index.md) contains the homepage content.
-- [`_layouts/`](_layouts) contains the page templates.
-- [`assets/`](assets) contains the stylesheet, media controls and project captures.
-- [`assets/projects/manifest.json`](assets/projects/manifest.json) records media sources, hashes and preview boundaries.
-- [`CNAME`](CNAME) configures the custom domain.
+- [`index.md`](index.md) — project captions, ordering, and links.
+- [`_layouts/`](_layouts) — page templates and project preview markup.
+- [`assets/css/styles.css`](assets/css/styles.css) — layout and styling.
+- [`assets/js/showcase.js`](assets/js/showcase.js) — motion controls and still fallbacks.
+- [`assets/projects/`](assets/projects/) — media, provenance [manifest](assets/projects/manifest.json), and [license notices](assets/projects/LICENSES.txt).
+- [`_config.yml`](_config.yml) and [`CNAME`](CNAME) — site settings and custom domain.
 
-Pushes to `main` are deployed by GitHub Pages and published at <https://dev.byebyebryan.com>.
+Keep project captions to one sentence and link directly to the code or demo.
+Identify generated previews and fictional data in their captions. When replacing
+media, update its manifest entry and hashes; update the asset version in the
+template when changing a cached image or stylesheet.
 
-## Content
+## Media notes
 
-The homepage features eight projects and a short tools strip. Keep each project
-caption to one sentence. Use project media and direct demo/code links; there are
-no long-form project pages or required update schedule. Renderer previews and
-simulated data must stay clearly identified.
+- The RLCD dashboard operates on a real Observer/Mesh feed. Its showcase loop
+  uses the production renderer with fictional conversations and virtual time.
+- The notification panel and Raster 90 use generated UI previews.
+- The flight clip is rendered from retained simulation telemetry using
+  [`scripts/render-flight.py`](scripts/render-flight.py), with presentation
+  styling and accelerated playback.
 
-The workflow and desktop projects appear as Codex Plus, Desk displays, Observer
-Core, and Rofi Plus. Observer Core groups Mesh Plus, Tmux Observer, and Agent
-Observer; Rofi Plus groups SSH Plus, Tmux Plus, and Agent Plus. These are showcase
-groupings; each component keeps its own repository and responsibilities. Codex
-Plus links to its separately published walkthrough. The software cards use HTML
-overviews rather than application screenshots.
+These previews are separate from physical-device footage. The Codex Plus,
+Observer Core, and Rofi Plus cards use HTML overviews. Exact sources, revisions,
+hashes, and media treatments are recorded in the manifest.
 
-The RLCD dashboard is implemented and operates on a real Observer/Mesh feed.
-Its portfolio animation comes from the production renderer with fictional
-conversations and virtual time; it is not a recording of the physical panel.
+## Publishing
 
-The flight clip is rendered from retained telemetry with
-[`scripts/render-flight.py`](scripts/render-flight.py); it does not rerun a
-simulation. The Pylander-inspired vector animation uses `random-462` from
-the October 8, 2026 procedural-terrain correction sweep, with receipt-checked
-inputs and a verified target landing. The vehicle is an enlarged presentation
-marker. White outlines on black use restrained red thrust, green landing pads
-and a cyan flight trail. Source paths, playback speed and media treatments are
-in the manifest.
+Pushes to `main` deploy through GitHub Pages to
+[dev.byebyebryan.com](https://dev.byebyebryan.com/). Build locally before pushing,
+then check the Pages deployment and live site. Generated `_site/` output stays
+untracked.
