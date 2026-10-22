@@ -2,25 +2,7 @@
 
 **[Visit the live site →](https://dev.byebyebryan.com/)**
 
-Source for my visual project showcase: games, graphics, simulation, desktop
-tools, and desk displays. Built with Jekyll and published through GitHub Pages.
-
-## Selected projects
-
-| Project | Focus |
-| --- | --- |
-| Cubey | Procedural worlds, Vulkan rendering, and GPU fluids. |
-| Powered Descent Lab | Rocket guidance and terrain-aware flight planning. |
-| Gomoku2D | Gomoku, Renju, bots, and replay analysis. |
-| Raster 90 | A bitmap watch face with its own pixel type and icons. |
-| Codex Plus | Workers, watches, later checks, peer messages, and browser reports. |
-| Desk displays | A USB notification panel and a live RLCD agent dashboard. |
-| Observer Core | Mesh Plus, Tmux Observer, and Agent Observer. |
-| Rofi Plus | SSH Plus, Tmux Plus, and Agent Plus. |
-
-The homepage also has a small-tools strip. Observer Core and Rofi Plus are
-showcase groupings; their components keep separate repositories and
-responsibilities. Codex Plus and Raster 90 link to their own project sites.
+Jekyll site hosted on GitHub Pages.
 
 ## Local development
 
@@ -40,32 +22,22 @@ Build the site into a temporary directory without touching the ignored `_site/` 
 bundle exec jekyll build --destination /tmp/byebyebryan-site
 ```
 
-## Editing the site
+## Repository layout
 
-- [`index.md`](index.md) — project captions, ordering, and links.
-- [`_layouts/`](_layouts) — page templates and project preview markup.
+- [`index.md`](index.md) — homepage content and front matter.
+- [`_layouts/`](_layouts) — page templates.
 - [`assets/css/styles.css`](assets/css/styles.css) — layout and styling.
 - [`assets/js/showcase.js`](assets/js/showcase.js) — motion controls and still fallbacks.
 - [`assets/projects/`](assets/projects/) — media, provenance [manifest](assets/projects/manifest.json), and [license notices](assets/projects/LICENSES.txt).
+- [`scripts/`](scripts/) — asset-generation helpers, excluded from the site build.
+- [`Gemfile`](Gemfile) and [`Gemfile.lock`](Gemfile.lock) — Ruby dependencies.
 - [`_config.yml`](_config.yml) and [`CNAME`](CNAME) — site settings and custom domain.
 
-Keep project captions to one sentence and link directly to the code or demo.
-Identify generated previews and fictional data in their captions. When replacing
-media, update its manifest entry and hashes; update the asset version in the
-template when changing a cached image or stylesheet.
+## Updating assets
 
-## Media notes
-
-- The RLCD dashboard operates on a real Observer/Mesh feed. Its showcase loop
-  uses the production renderer with fictional conversations and virtual time.
-- The notification panel and Raster 90 use generated UI previews.
-- The flight clip is rendered from retained simulation telemetry using
-  [`scripts/render-flight.py`](scripts/render-flight.py), with presentation
-  styling and accelerated playback.
-
-These previews are separate from physical-device footage. The Codex Plus,
-Observer Core, and Rofi Plus cards use HTML overviews. Exact sources, revisions,
-hashes, and media treatments are recorded in the manifest.
+Record media sources and hashes in the manifest, and retain applicable license
+notices. When replacing a cached image or stylesheet, update its version in the
+template. Keep still fallbacks available for paused and reduced-motion viewing.
 
 ## Publishing
 
