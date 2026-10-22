@@ -46,29 +46,46 @@ projects:
         url: https://dev.byebyebryan.com/raster90/
       - label: Code
         url: https://github.com/byebyebryan/raster90
+  - name: Codex Plus
+    kind: Agent workflows
+    description: Workers, watches, later checks, peer messages, and browser reports around the native Codex CLI.
+    media: codex
+    links:
+      - label: Walkthrough
+        url: https://dev.byebyebryan.com/codex-plus/
+      - label: Code
+        url: https://github.com/byebyebryan/codex-plus
   - name: Desk displays
     kind: Hardware & interfaces
-    description: A USB notification panel and an experimental reflective agent-roster display.
+    description: A USB notification panel and a live reflective dashboard for Codex conversations across machines.
     media: displays
     links:
       - label: Notification panel
         url: https://github.com/byebyebryan/esp32-349
-      - label: RLCD prototype
-        url: https://github.com/byebyebryan/esp32-rlcd
+      - label: RLCD dashboard
+        url: https://github.com/byebyebryan/esp32-rlcd/tree/main/projects/agent-dashboard
+  - name: Observer Core
+    kind: Shared services
+    description: Shared host routing and live views of Codex activity and tmux sessions across machines.
+    media: observers
+    links:
+      - label: Mesh Plus
+        url: https://github.com/byebyebryan/mesh-plus
+      - label: Tmux Observer
+        url: https://github.com/byebyebryan/tmux-observer
+      - label: Agent Observer
+        url: https://github.com/byebyebryan/agent-observer
   - name: Rofi Plus
     kind: Desktop tools
-    description: Pick up agent sessions, manage tmux, and connect across machines.
-    image: /assets/projects/rofi-plus.png
-    image_alt: Rofi Agent Plus displaying invented preview sessions across a workstation and laptop.
+    description: Pick SSH hosts, manage tmux sessions, and open native agent managers across machines.
+    media: rofi
     links:
-      - label: Agent
-        url: https://github.com/byebyebryan/rofi-agent-plus
-      - label: Tmux
-        url: https://github.com/byebyebryan/rofi-tmux-plus
-      - label: SSH
+      - label: SSH Plus
         url: https://github.com/byebyebryan/rofi-ssh-plus
-      - label: Observer
-        url: https://github.com/byebyebryan/agent-observer
+      - label: Tmux Plus
+        url: https://github.com/byebyebryan/rofi-tmux-plus
+      - label: Agent Plus
+        url: https://github.com/byebyebryan/rofi-agent-plus
 tools:
   - name: remote-chrome
     description: Remote Chrome, local window and notifications.
@@ -76,7 +93,4 @@ tools:
   - name: lazy-serializable
     description: Declare C++ fields once. Serialize in many formats.
     url: https://github.com/byebyebryan/lazy-serializable
-  - name: DMS Power Status
-    description: Live battery draw, history, and charge-aware ETA.
-    url: https://github.com/byebyebryan/dms-power-status
 ---

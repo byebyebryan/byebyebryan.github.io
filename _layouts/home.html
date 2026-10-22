@@ -27,6 +27,15 @@ layout: default
                 <source src="{{ project.video | relative_url }}" type="video/mp4" />
                 <a href="{{ project.video | relative_url }}">Watch the {{ project.name }} demo</a>
               </video>
+            {% when 'codex' %}
+              <figure class="software-preview codex-preview">
+                <div class="preview-topline"><span>codex +</span><span>One continuing conversation</span></div>
+                <p class="codex-prompt">Keep the work moving.</p>
+                <div class="codex-capabilities">
+                  <span>Workers</span><span>Watches</span><span>Later checks</span><span>Peer messages</span><span>Browser reports</span>
+                </div>
+                <figcaption>Native CLI / TUI · workflow overview</figcaption>
+              </figure>
             {% when 'displays' %}
               <figure class="display-panel">
                 <img src="{{ '/assets/projects/notification-panel.png' | relative_url }}"
@@ -35,10 +44,32 @@ layout: default
                 <figcaption>Notification panel · UI preview</figcaption>
               </figure>
               <figure class="display-roster">
-                <img src="{{ '/assets/projects/rlcd-roster.png' | relative_url }}"
-                  alt="RLCD renderer preview showing blocked, waiting and working sessions from simulated data."
+                <img src="{{ '/assets/projects/rlcd-roster.png' | relative_url }}?v=7bdf6cb770"
+                  data-still-src="{{ '/assets/projects/rlcd-roster.png' | relative_url }}?v=7bdf6cb770"
+                  data-motion-src="{{ '/assets/projects/rlcd-dashboard.gif' | relative_url }}"
+                  alt="RLCD dashboard native-render demo with fictional Codex conversations, host badges, activity ages and blocked, waiting and working states."
                   width="400" height="300" loading="lazy" />
-                <figcaption>RLCD · simulated roster</figcaption>
+                <figcaption>RLCD dashboard · fictional demo data</figcaption>
+              </figure>
+            {% when 'observers' %}
+              <figure class="software-preview observer-preview">
+                <div class="preview-topline"><span>Observer Core</span><span>Shared state</span></div>
+                <div class="observer-sources">
+                  <div><strong>Agent Observer</strong><span>Codex activity</span></div>
+                  <div><strong>Tmux Observer</strong><span>Sessions & desktop state</span></div>
+                </div>
+                <div class="observer-delivery"><strong>Mesh Plus</strong><span>Hosts · routes · fresh delivery</span></div>
+                <figcaption>Feeds for dashboards, Tmux Plus & read clients</figcaption>
+              </figure>
+            {% when 'rofi' %}
+              <figure class="software-preview rofi-preview">
+                <div class="preview-topline"><span>Rofi Plus</span><span>Find your next context</span></div>
+                <div class="picker-overview">
+                  <div><span class="picker-symbol" aria-hidden="true">↗</span><strong>SSH Plus</strong><span>Connect to a host</span></div>
+                  <div><span class="picker-symbol" aria-hidden="true">▤</span><strong>Tmux Plus</strong><span>Open a tmux session</span></div>
+                  <div><span class="picker-symbol" aria-hidden="true">›</span><strong>Agent Plus</strong><span>Open an agent manager</span></div>
+                </div>
+                <figcaption>Three focused pickers · suite overview</figcaption>
               </figure>
             {% when 'watches' %}
               <figure>

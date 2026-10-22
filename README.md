@@ -40,10 +40,21 @@ Pushes to `main` are deployed by GitHub Pages and published at <https://dev.byeb
 
 ## Content
 
-The homepage features six projects and a short tools strip. Keep each project
+The homepage features eight projects and a short tools strip. Keep each project
 caption to one sentence. Use project media and direct demo/code links; there are
 no long-form project pages or required update schedule. Renderer previews and
 simulated data must stay clearly identified.
+
+The workflow and desktop projects appear as Codex Plus, Desk displays, Observer
+Core, and Rofi Plus. Observer Core groups Mesh Plus, Tmux Observer, and Agent
+Observer; Rofi Plus groups SSH Plus, Tmux Plus, and Agent Plus. These are showcase
+groupings; each component keeps its own repository and responsibilities. Codex
+Plus links to its separately published walkthrough. The software cards use HTML
+overviews rather than application screenshots.
+
+The RLCD dashboard is implemented and operates on a real Observer/Mesh feed.
+Its portfolio animation comes from the production renderer with fictional
+conversations and virtual time; it is not a recording of the physical panel.
 
 The flight clip is rendered from retained telemetry with
 [`scripts/render-flight.py`](scripts/render-flight.py); it does not rerun a

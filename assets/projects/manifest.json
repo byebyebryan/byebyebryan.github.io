@@ -46,9 +46,18 @@
     {
       "file": "rlcd-roster.png",
       "source_repository": "https://github.com/byebyebryan/esp32-rlcd",
-      "source_path": "docs/evidence/2026-10-06-flashing-rows/demo-settled-00-initial-order.png",
-      "treatment": "Unmodified source media",
-      "sha256": "b87f4ad67934c9245127f0b7ab5df52cc25ba172e19aa3d1b5dbd025c4303bc9"
+      "source_revision": "aaeb32b23bd936f1aae88fa5e0c96b81f15691ab",
+      "source_path": "projects/agent-dashboard/docs/media/dashboard.png",
+      "treatment": "Unmodified production C renderer output with fictional conversations and virtual time; not physical panel footage. 400x300 still fallback for paused, offscreen, no-JavaScript and reduced-motion viewing.",
+      "sha256": "7bdf6cb770cbe0ab6cbf5c12388d497f4ee8d1a3c27ba9e992c73ccb5735092f"
+    },
+    {
+      "file": "rlcd-dashboard.gif",
+      "source_repository": "https://github.com/byebyebryan/esp32-rlcd",
+      "source_revision": "aaeb32b23bd936f1aae88fa5e0c96b81f15691ab",
+      "source_path": "projects/agent-dashboard/docs/media/dashboard-demo.gif",
+      "treatment": "Unmodified production C renderer output with fictional conversations and virtual time; not physical panel footage. 14-second demo of blocked/error flashing, row movement, partial/offline expiry and recovery.",
+      "sha256": "8b73aadf2143d782807104fff588a347af5cfe957e6c262a0eb550f442d5a5a0"
     },
     {
       "file": "raster90-preview.gif",
@@ -215,15 +224,6 @@
         "landing_pads": "#7ce39b",
         "flight_trail": "#70cddd"
       }
-    },
-    {
-      "file": "rofi-plus.png",
-      "source_repository": "https://github.com/byebyebryan/rofi-agent-plus",
-      "source_revision": "039933046b4acf0bc99852712dbbaa4cec9f61cc",
-      "treatment": "Actual render_snapshot output and Rofi renderer on an isolated Xvfb display; four invented preview sessions; no provider queries or actions",
-      "theme": "Owner-provided DMS-blue Rofi theme; preview font increased from 11 to 14 for readability",
-      "provider_icons": "CC0 Claude Code icon and MIT OpenAI icon; see source ASSETS.md",
-      "sha256": "eebdcd93e56956fc87e8c4db2cac79415dd906884adf1e94f53387965aa2340a"
     }
   ]
 }
