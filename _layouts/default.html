@@ -4,16 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% if page.title and page.title != site.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html }}" />
+    <meta name="description" content="{{ page.description | default: page.excerpt | default: site.description | strip_html | normalize_whitespace | escape }}" />
     <link rel="canonical" href="{{ page.url | absolute_url }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ site.title }}" />
-    <meta property="og:description" content="{{ site.description }}" />
+    <meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}" />
+    <meta property="og:title" content="{{ page.title | default: site.title | escape }}" />
+    <meta property="og:description" content="{{ page.description | default: site.description | escape }}" />
     <meta property="og:url" content="{{ page.url | absolute_url }}" />
-    <meta property="og:image" content="{{ '/assets/projects/cubey-ocean.jpg' | absolute_url }}" />
-    <meta property="og:image:alt" content="A sunset over Cubey's simulated ocean." />
-    <meta property="og:image:width" content="1280" />
-    <meta property="og:image:height" content="720" />
+    <meta property="og:image" content="{{ page.social_image | default: '/assets/projects/cubey-ocean.jpg' | absolute_url }}" />
+    <meta property="og:image:alt" content="{{ page.social_image_alt | default: "A sunset over Cubey's simulated ocean." | escape }}" />
+    <meta property="og:image:width" content="{{ page.social_image_width | default: 1280 }}" />
+    <meta property="og:image:height" content="{{ page.social_image_height | default: 720 }}" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,10 +21,11 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}?v=1f4e34d9bf" />
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}?v=66376f1e9c" />
   </head>
   <body>
-    <main class="page">
+    <a class="skip-link" href="#content">Skip to content</a>
+    <main class="page" id="content" tabindex="-1">
       {{ content }}
     </main>
   </body>

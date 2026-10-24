@@ -66,9 +66,11 @@ projects:
         url: https://github.com/byebyebryan/esp32-rlcd/tree/main/projects/agent-dashboard
   - name: Observer Core
     kind: Shared services
-    description: Shared host routing and live views of Codex activity and tmux sessions across machines.
+    description: Read-only Codex observations for dashboards, reusable host routing, and independent tmux views.
     media: observers
     links:
+      - label: Fleet Plus walkthrough
+        url: https://dev.byebyebryan.com/fleet-plus/
       - label: Mesh Plus
         url: https://github.com/byebyebryan/mesh-plus
       - label: Tmux Observer
@@ -80,6 +82,8 @@ projects:
     description: Pick SSH hosts, manage tmux sessions, and open native agent managers across machines.
     media: rofi
     links:
+      - label: Choose your tools
+        url: https://dev.byebyebryan.com/fleet-plus/start/
       - label: SSH Plus
         url: https://github.com/byebyebryan/rofi-ssh-plus
       - label: Tmux Plus
