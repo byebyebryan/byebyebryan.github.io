@@ -83,7 +83,7 @@ The RLCD dashboard is one consumer. Its row selection, labels, device transport
 and physical readability belong to that project. Another utility might choose
 a compact status summary or diagnostics, using the same read-only foundation.
 
-The [bounded utility example](https://github.com/byebyebryan/agent-observer/blob/main/docs/utility-read-guide.md)
+The [bounded utility example](https://github.com/byebyebryan/agent-observer/blob/main/docs/guides/read-utilities.md)
 is a starting point for developers. It uses public local/Mesh interfaces, explicit
 identity and endpoint inputs, bounded execution, and a content-free summary.
 It keeps uncertainty and expiry visible instead of replacing them with guesses.
