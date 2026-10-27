@@ -1,4 +1,4 @@
-Cubey Ocean, Water 3D and Fire 3D demo reel and Ocean poster
+Cubey workshop reel, authored SDF robot posters and retained Ocean social fallback
 https://github.com/byebyebryan/cubey
 
 The MIT License (MIT)

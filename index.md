@@ -2,19 +2,21 @@
 layout: home
 title: ByeByeBryan
 lede: Games, graphics, simulation, and tools for my own desktop.
+social_image: /assets/projects/cubey-workshop.jpg?v=12a78aab3c
+social_image_alt: An authored SDF robot rendered by Cubey's Vulkan engine.
 projects:
   - name: Cubey
     kind: Graphics & simulation
-    description: Procedural worlds, rendering experiments, and GPU fluids in C++ and Vulkan.
+    description: A graphics and simulation workshop with a C++20/Vulkan engine, shared materials, and authored SDF.
     media: video
-    video: /assets/projects/cubey-reel.mp4
-    image: /assets/projects/cubey-ocean.webp
-    image_alt: Cubey's spectral ocean, three-dimensional water and fire simulations.
+    video: /assets/projects/cubey-reel.mp4?v=a8be4d4c23
+    image: /assets/projects/cubey-workshop.webp?v=e56a7f1193
+    image_alt: "Edited native demos: ocean waves, twelve materials at dusk, and a saved SDF robot construction replay at twice speed."
     links:
+      - label: Showcase
+        url: https://dev.byebyebryan.com/cubey/
       - label: Code
         url: https://github.com/byebyebryan/cubey
-      - label: More demos
-        url: https://github.com/byebyebryan/cubey#showcase
   - name: Powered Descent Lab
     kind: Flight research
     description: Rocket guidance, terrain-aware planning, and deterministic flight evaluation.

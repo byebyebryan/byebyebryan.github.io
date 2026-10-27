@@ -3,30 +3,168 @@
     {
       "file": "cubey-reel.mp4",
       "source_repository": "https://github.com/byebyebryan/cubey",
+      "source_revision": "d0ae6a74b96a4c0e02a1d9dc0600de0b6f7b278a",
+      "source_revision_scope": "Pinned site/media selection; native capture revisions and historical unknowns remain per source.",
+      "source_manifest": {
+        "path": "site/media/manifest.json",
+        "sha256": "7fad52063e94d761dec8ce1b171fc133100041fcb9007baa0da1bc2f5b448450"
+      },
+      "capture_receipt": {
+        "path": "site/media/receipts/native-showcases.json",
+        "sha256": "6ede817d43c676592cec4bedb5cb239171063050e8eb3cc8be12bc45a14700eb"
+      },
       "sources": [
         {
-          "path": "docs/media/showcase/ocean.mp4",
-          "sha256": "dd0c33c65ba355c75da484875822fef2abf7dd2a61fc611b3b21671302216d6b"
+          "id": "ocean-surface-film",
+          "path": "site/public/media/ocean-surface-film.mp4",
+          "sha256": "dd0c33c65ba355c75da484875822fef2abf7dd2a61fc611b3b21671302216d6b",
+          "capture_provenance": {
+            "source": "outputs/cubey-site/workshop-alignment-2026-10-24/export/assets/ocean-surface.mp4",
+            "sourceSha256": "dd0c33c65ba355c75da484875822fef2abf7dd2a61fc611b3b21671302216d6b",
+            "sourceRevision": null,
+            "recipe": "docs/media/showcase/ocean.mp4",
+            "note": "Reused native media selected during workshop-alignment review. Historical native capture; the selection revision is not its render revision.",
+            "selectedAtRevision": "492fac845b80cf3be0b3ca6df24894ebb66afbee"
+          },
+          "credit": {
+            "label": "Cubey original media \u00b7 MIT",
+            "url": "https://github.com/byebyebryan/cubey/blob/main/LICENSE",
+            "author": "Bryan"
+          },
+          "source_start_seconds": 0,
+          "source_duration_seconds": 4,
+          "playback_rate": 1,
+          "output_start_seconds": 0,
+          "output_duration_seconds": 4.0
         },
         {
-          "path": "docs/media/showcase/water-3d.mp4",
-          "sha256": "90d242578225647d82ae8041e32b63f66f9ac4797622d0413360c62d7f438ece"
+          "id": "mesh-materials-film",
+          "path": "site/public/media/mesh-materials-film.mp4",
+          "sha256": "0660d07b25613c817310636f1113c51516baa3b4aef82c0b0a340d5c1e1e7f18",
+          "capture_provenance": {
+            "source": "outputs/cubey-site/native-showcases-2026-10-24/web/mesh-materials-film.mp4",
+            "sourceSha256": "0660d07b25613c817310636f1113c51516baa3b4aef82c0b0a340d5c1e1e7f18",
+            "sourceRevision": "42b7538af18df9dcac4f017970f95565bc185523",
+            "recipe": "site/media/receipts/native-showcases.json",
+            "note": "Native landscape recapture. Master identity, exact command and web derivative are recorded in the capture receipt.",
+            "webDeliveryReceipt": "site/media/receipts/native-showcases.json"
+          },
+          "credit": {
+            "label": "Cubey original media \u00b7 MIT",
+            "url": "https://github.com/byebyebryan/cubey/blob/main/LICENSE",
+            "author": "Bryan"
+          },
+          "source_start_seconds": 1,
+          "source_duration_seconds": 4,
+          "playback_rate": 1,
+          "output_start_seconds": 4,
+          "output_duration_seconds": 4.0
         },
         {
-          "path": "docs/media/showcase/fire-3d.mp4",
-          "sha256": "3fc22accb5084a27acd7435d0ffbabbd597229cc3dcb555e83f831b1fa215348"
+          "id": "robot-film",
+          "path": "site/public/media/robot-film.mp4",
+          "sha256": "bee42e4fe480e8ad980037690c0f3dc2f0ffb6dee67bfb19a6827126fda0b9d5",
+          "capture_provenance": {
+            "source": "outputs/cubey-site/native-showcases-2026-10-24/web/robot-film.mp4",
+            "sourceSha256": "bee42e4fe480e8ad980037690c0f3dc2f0ffb6dee67bfb19a6827126fda0b9d5",
+            "sourceRevision": "ec17b49fff3459cf9aff32f0680cd9c8b3b7c43b",
+            "recipe": "site/media/receipts/native-showcases.json",
+            "note": "Native landscape recapture. Master identity, exact command and web derivative are recorded in the capture receipt.",
+            "webDeliveryReceipt": "site/media/receipts/native-showcases.json"
+          },
+          "credit": {
+            "label": "Cubey original media \u00b7 MIT",
+            "url": "https://github.com/byebyebryan/cubey/blob/main/LICENSE",
+            "author": "Bryan"
+          },
+          "source_start_seconds": 0,
+          "source_duration_seconds": 16,
+          "playback_rate": 2,
+          "output_start_seconds": 8,
+          "output_duration_seconds": 8.0
         }
       ],
-      "treatment": "First four seconds of each published source clip, in Ocean / Water 3D / Fire 3D order; native timing, 1024x576 at 30 fps, H.264 CRF 23, silent fast-start MP4",
-      "sha256": "0ebdf211d99785180a558e8962a838d30a9c40158f2e9b4876c5e6f4c230114f"
+      "treatment": "16-second edited native reel: Ocean 0-4s; twelve Forward PBR materials 1-5s; complete saved SDF robot construction replay 0-16s at twice speed. Hard cuts, original framing, no cropping or overlays. Source material clouds already use accelerated drift. Recorded demonstrations, not live brush sculpting or a native performance claim.",
+      "encoding": {
+        "tool": "ffmpeg version n9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+        "input_order": [
+          "ocean-surface-film",
+          "mesh-materials-film",
+          "robot-film"
+        ],
+        "filter_complex": "[0:v]trim=start=0:end=4,setpts=PTS-STARTPTS,fps=30,scale=1024:576:flags=lanczos,setsar=1[o];[1:v]trim=start=1:end=5,setpts=PTS-STARTPTS,fps=30,scale=1024:576:flags=lanczos,setsar=1[m];[2:v]trim=start=0:end=16,setpts=(PTS-STARTPTS)/2,fps=30,scale=1024:576:flags=lanczos,setsar=1[r];[o][m][r]concat=n=3:v=1:a=0[v]",
+        "codec": "libx264",
+        "preset": "medium",
+        "crf": 23,
+        "pixel_format": "yuv420p",
+        "width": 1024,
+        "height": 576,
+        "fps": 30,
+        "duration_seconds": 16,
+        "frames": 480,
+        "audio": false,
+        "faststart": true
+      },
+      "license": "MIT",
+      "sha256": "a8be4d4c23ac9ffd181d7be587f003528b8a3bc1ac0f47fe720e71a492c98ff6"
     },
     {
-      "file": "cubey-ocean.webp",
+      "file": "cubey-workshop.webp",
       "source_repository": "https://github.com/byebyebryan/cubey",
-      "source_path": "docs/media/showcase/ocean.png",
-      "source_sha256": "40605723e7c51dc99f4c184442fdea2ad2cc50ee4d7edf6139e171cc78a10e0a",
-      "treatment": "WebP quality 85 conversion of the original poster",
-      "sha256": "895b308750b773d2b7eafb0f103daf9055ae608fff37c5bd32efdd84cdae4677"
+      "source_revision": "d0ae6a74b96a4c0e02a1d9dc0600de0b6f7b278a",
+      "source_path": "site/public/media/robot.webp",
+      "source_sha256": "b0c42369627605a0ca1e18ff7389a9af02fd67c59cc4ee965071c106d571c07c",
+      "capture_provenance": {
+        "source": "outputs/cubey-site/native-showcases-2026-10-24/captures/robot-landscape/capture.png",
+        "sourceSha256": "7460773cb0fc48dd81e48b6c53da5d8170f7ec6cab5edff5974f719db4db13b6",
+        "sourceRevision": "ec17b49fff3459cf9aff32f0680cd9c8b3b7c43b",
+        "recipe": "site/media/receipts/native-showcases.json",
+        "note": "Native landscape recapture. Master identity, exact command and web derivative are recorded in the capture receipt.",
+        "webDeliveryReceipt": "site/media/receipts/native-showcases.json"
+      },
+      "capture_receipt": {
+        "path": "site/media/receipts/native-showcases.json",
+        "sha256": "6ede817d43c676592cec4bedb5cb239171063050e8eb3cc8be12bc45a14700eb"
+      },
+      "credit": {
+        "label": "Cubey original media \u00b7 MIT",
+        "url": "https://github.com/byebyebryan/cubey/blob/main/LICENSE",
+        "author": "Bryan"
+      },
+      "treatment": "Resize the native 1600x900 robot poster to 1280x720 with ImageMagick; WebP quality 85, no cropping. Static video poster for paused, no-autoplay and reduced-motion viewing.",
+      "width": 1280,
+      "height": 720,
+      "license": "MIT",
+      "sha256": "e56a7f1193ffe83a605124b6a29056c877aae09d0af26c1aaaa6e3b17eac4c83"
+    },
+    {
+      "file": "cubey-workshop.jpg",
+      "source_repository": "https://github.com/byebyebryan/cubey",
+      "source_revision": "d0ae6a74b96a4c0e02a1d9dc0600de0b6f7b278a",
+      "source_path": "site/public/media/robot.webp",
+      "source_sha256": "b0c42369627605a0ca1e18ff7389a9af02fd67c59cc4ee965071c106d571c07c",
+      "capture_provenance": {
+        "source": "outputs/cubey-site/native-showcases-2026-10-24/captures/robot-landscape/capture.png",
+        "sourceSha256": "7460773cb0fc48dd81e48b6c53da5d8170f7ec6cab5edff5974f719db4db13b6",
+        "sourceRevision": "ec17b49fff3459cf9aff32f0680cd9c8b3b7c43b",
+        "recipe": "site/media/receipts/native-showcases.json",
+        "note": "Native landscape recapture. Master identity, exact command and web derivative are recorded in the capture receipt.",
+        "webDeliveryReceipt": "site/media/receipts/native-showcases.json"
+      },
+      "capture_receipt": {
+        "path": "site/media/receipts/native-showcases.json",
+        "sha256": "6ede817d43c676592cec4bedb5cb239171063050e8eb3cc8be12bc45a14700eb"
+      },
+      "credit": {
+        "label": "Cubey original media \u00b7 MIT",
+        "url": "https://github.com/byebyebryan/cubey/blob/main/LICENSE",
+        "author": "Bryan"
+      },
+      "treatment": "Resize the native 1600x900 robot poster to 1280x720 with ImageMagick; progressive JPEG quality 90, 4:2:0 sampling, no cropping. Homepage social fallback.",
+      "width": 1280,
+      "height": 720,
+      "license": "MIT",
+      "sha256": "12a78aab3c5ebb044ca4045b6fdbe357ab51ef37d9a7f3b3380e16ad235fb8dc"
     },
     {
       "file": "cubey-ocean.jpg",
