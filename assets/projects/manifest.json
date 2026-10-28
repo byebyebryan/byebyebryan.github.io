@@ -218,18 +218,289 @@
     {
       "file": "gomoku2d.mp4",
       "source_repository": "https://github.com/byebyebryan/gomoku2d",
-      "source_path": "docs/assets/readme-gameplay.gif",
-      "source_sha256": "ebeaeb88b05d3e2abae6ea303cea892d350e7419e0e2722fd1dcc53fa667a150",
-      "treatment": "H.264 conversion",
-      "sha256": "7d9d462703d34a5405542cff1db63576c48b960d7586201a96923356f86cca57"
+      "source_revision": "5981bda1a34abd07790425b6c5ec48705c8005e7",
+      "source_release": "v0.6.3",
+      "capture_date": "2026-10-28",
+      "capture": {
+        "browser": "Google Chrome 156.0.8078.73",
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "deviceScaleFactor": 1
+        },
+        "origin": "http://localhost:18002",
+        "server_host": "Starship",
+        "isolation": "Fresh local origin with Guest profile only; unmodified released Pages artifact. No sign-in, real-account data, public-profile reads, or production writes.",
+        "published_build": {
+          "repository": "byebyebryan/gomoku2d",
+          "release": "v0.6.3",
+          "source_revision": "5981bda1a34abd07790425b6c5ec48705c8005e7",
+          "workflow_run": 40577585755,
+          "artifact_id": 12766719431,
+          "artifact_digest": "sha256:08562118dc993142fab4fcec8285e93beeadc27d8815b9a26078668c189742d0",
+          "artifact_tar_sha256": "69f00ce99d3fbe41ded351ad030c72f22f41cfdfd380ba6b119507524a777aaa"
+        },
+        "published_parity": {
+          "index_equal": true,
+          "assets": [
+            {
+              "path": "/assets/index-DeVPBzWv.js",
+              "sha256": "4be39d16447e0320229814844391c57137d4715a4b2bf7323d815ce49d7fb8b6",
+              "equal": true
+            },
+            {
+              "path": "/assets/rolldown-runtime-XKyaHtl9.js",
+              "sha256": "548d1dbf321e7d2ae804fcc158b588706a7c52f8ca175de1490c6ccb4dbe55b7",
+              "equal": true
+            },
+            {
+              "path": "/assets/jsx-runtime-C4m2jyM5.js",
+              "sha256": "2e9d5f76a3c162c2da831c44e1f6a141a5de66a6e5a760453234784d7a0c810d",
+              "equal": true
+            },
+            {
+              "path": "/assets/sequence_font-BHmT62ms.js",
+              "sha256": "d1f198ff901270b972d412ce478f2dcd32efd781c9799711a3acf2f91539916f",
+              "equal": true
+            },
+            {
+              "path": "/assets/index-BzajAtUe.css",
+              "sha256": "e86fc58ea309de749cd0ba82c2550d3e313ba829fee52bdca9222be0c3758382",
+              "equal": true
+            }
+          ]
+        },
+        "method": "Browser runtime screenshots (JPEG), plus native CDP Page.startScreencast PNG frames for gameplay. Full 1280x720 viewport at DPR 1; no page content/style substitutions."
+      },
+      "license": "MIT",
+      "font_license": "CC0-1.0 (PixelOperator)",
+      "credit": {
+        "label": "Gomoku2D original application and artwork",
+        "author": "ByeByeBryan",
+        "url": "https://github.com/byebyebryan/gomoku2d/blob/5981bda1a34abd07790425b6c5ec48705c8005e7/LICENSE"
+      },
+      "scenes": [
+        {
+          "id": "play",
+          "capture_file": "play-take-110.png",
+          "capture_sha256": "b5afd599ddab5512dae104249ff7c4b73c04e2547ee31bab0e7396b7c8484f30",
+          "url": "/match/local",
+          "state": "Guest branch from Guide example another-line at ply 26. Black L7 (cell 101), then Normal Bot L9 (cell 131), reaching ply 28. Native 4-second screencast.",
+          "output_start_seconds": 0,
+          "output_duration_seconds": 4,
+          "playback_rate": 1,
+          "native_frames": {
+            "count": 116,
+            "format": "PNG",
+            "duration_seconds": 3.9960110187530518,
+            "ledger_sha256": "cbf0842fc5b0de6b1e55447e6f4fa2e2d4229ad3f48114d2465389d5381c7ed5",
+            "timing": "CDP monotonic capture timestamps, resampled to 30 fps; final frame held to exactly 4 seconds",
+            "first_frame": {
+              "file": "play-take-110.png",
+              "sha256": "b5afd599ddab5512dae104249ff7c4b73c04e2547ee31bab0e7396b7c8484f30",
+              "timestamp": 1793218360.003617
+            },
+            "last_frame": {
+              "file": "play-take-225.png",
+              "sha256": "fdabe0e39325bb80e00e636d57239fab94ea9a2caf94c96c432f6e5fd018fd46",
+              "timestamp": 1793218363.999628
+            }
+          }
+        },
+        {
+          "id": "guide",
+          "capture_file": "guide.jpg",
+          "capture_sha256": "bb93170b0276f42869ea54daf0bd0eae410017a428cde0f73a5208a3d0b675e7",
+          "url": "/guide/#examples",
+          "state": "Two legal bot-generated examples; no saved user history.",
+          "output_start_seconds": 4,
+          "output_duration_seconds": 1,
+          "playback_rate": 1
+        },
+        {
+          "id": "analysis-26",
+          "capture_file": "replay-26.jpg",
+          "capture_sha256": "1ec7c21a182d1208a69727855a2145177336adce8ab52ee5f837fe573fc66675",
+          "url": "/replay/shared/",
+          "state": "Guide finished-game example, analysis settled, ply 26/28, both stone colours and replay controls visible.",
+          "output_start_seconds": 5,
+          "output_duration_seconds": 1.5,
+          "playback_rate": 1
+        },
+        {
+          "id": "analysis-24",
+          "capture_file": "replay-24.jpg",
+          "capture_sha256": "57a62e3ed80a84541678014e6a479dcfda0cd8884fea458c3cf1309709801954",
+          "url": "/replay/shared/",
+          "state": "Same example, Previous turn to ply 24/28.",
+          "output_start_seconds": 6.5,
+          "output_duration_seconds": 1.5,
+          "playback_rate": 1
+        },
+        {
+          "id": "share-options",
+          "capture_file": "share-as-played.jpg",
+          "capture_sha256": "d3e8b599fa0b7a0d730ffb99a1d5b5ed03bec85b6fa1c2fb4434798c80d742d8",
+          "url": "/replay/shared/",
+          "state": "Share replay pane at ply 24, As played names and no available profile links; bot-generated example.",
+          "output_start_seconds": 8,
+          "output_duration_seconds": 2,
+          "playback_rate": 1
+        },
+        {
+          "id": "share-link",
+          "capture_file": "share-copy.jpg",
+          "capture_sha256": "d58c5dec5cb79b655e551293caa29b10b36012604ce3fd2aa1bdcc3536f095b8",
+          "url": "/replay/shared/",
+          "state": "Same Share replay pane, scrolled to Copy Link and local replay URL. No copying, saving or publishing.",
+          "output_start_seconds": 10,
+          "output_duration_seconds": 2,
+          "playback_rate": 1
+        },
+        {
+          "id": "history-intro",
+          "capture_file": "history-intro.jpg",
+          "capture_sha256": "f01e968c391e9d22763eef6c245103d2691059e49899aa86837edf5e947bbc77",
+          "url": "/dev/reviews/history/?version=0.6.2&layout=portrait",
+          "state": "UI history viewer and selected 0.6.2 milestone. This is the v0.6.3 viewer, not a new capture of an old app version.",
+          "output_start_seconds": 12,
+          "output_duration_seconds": 1,
+          "playback_rate": 1
+        },
+        {
+          "id": "history-comparison",
+          "capture_file": "history-compare.jpg",
+          "capture_sha256": "65946400730e6a396cb5f854dab3be2a1e4a4e3086af295e2b6b01f4161e0011",
+          "url": "/dev/reviews/history/?version=0.6.2&layout=portrait&pair=home-guide-discovery.default&full=0",
+          "state": "Native adjacent Home comparison, v0.6.1 vs v0.6.2, portrait, matched scale, Full captures off. Original labels retained. Frozen source images remain retrospective captures.",
+          "output_start_seconds": 13,
+          "output_duration_seconds": 3,
+          "playback_rate": 1,
+          "historical_images": [
+            {
+              "path": "history/home-default-061-portrait-78b562a50de4.png",
+              "sha256": "78b562a50de4a86ef29baba7372a8ad731ec127050e2eb13accad92653a4a7bf"
+            },
+            {
+              "path": "history/home-default-062-portrait-26512a3bc9b4.png",
+              "sha256": "26512a3bc9b4caeeecbf6168d499c424d5da0ede84297478b68c44f3cfbc9975"
+            }
+          ]
+        },
+        {
+          "id": "icon-inspection",
+          "capture_file": "icons.jpg",
+          "capture_sha256": "04c1ac0f315bee22f26208436b1c0703ea081aa49ed3e2e2fa18b5b86ce29e7b",
+          "url": "/visuals/?view=icons&compare=share,save,publish",
+          "state": "Native Share, Save and Publish 24x24 and 2x previews beside enlarged source grids. Grid on; no art edits.",
+          "output_start_seconds": 16,
+          "output_duration_seconds": 4,
+          "playback_rate": 1
+        }
+      ],
+      "example_sources": {
+        "path": "gomoku-web/src/replay/replay_examples.ts",
+        "revision": "5981bda1a34abd07790425b6c5ec48705c8005e7",
+        "examples": [
+          "another-line",
+          "finished-game"
+        ],
+        "note": "Static legal bot games extracted from published lab reports, not played-user history."
+      },
+      "treatment": "20-second edited browser reel. Four seconds of native guest play, then held settled browser captures: Guide examples 1s; analysis at ply 26 and 24 for 1.5s each; Share replay upper and lower pane for 2s each; UI history introduction 1s and native neighbouring-release comparison 3s; icon inspection 4s. Hard cuts, no crop, resize, overlays or synthetic UI. Waiting and navigation omitted. UI history is the application's own comparison, with original historical version labels retained.",
+      "encoding": {
+        "tool": "ffmpeg version n9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+        "codec": "libx264",
+        "preset": "slow",
+        "crf": 20,
+        "pixel_format": "yuv420p",
+        "color_range": "limited",
+        "color_matrix": "bt709",
+        "width": 1280,
+        "height": 720,
+        "fps": 30,
+        "duration_seconds": 20,
+        "frames": 600,
+        "audio": false,
+        "faststart": true,
+        "scene_timing": "4s native capture followed by a concat of held screenshots at 1, 1.5, 1.5, 2, 2, 1, 3 and 4 seconds; all at 30 fps."
+      },
+      "bytes": 503677,
+      "sha256": "0b8cb3bc640f28868cb804a056723c3c18e229a377ee1ead8d4a6c30b598d9ef"
     },
     {
       "file": "gomoku2d.png",
       "source_repository": "https://github.com/byebyebryan/gomoku2d",
-      "source_path": "docs/assets/readme-gameplay.gif",
-      "source_sha256": "ebeaeb88b05d3e2abae6ea303cea892d350e7419e0e2722fd1dcc53fa667a150",
-      "treatment": "First source frame",
-      "sha256": "24d5f28c653a9d270ce37fa5bf7c2779118f8a98548598c7f665dd6589bee92b"
+      "source_revision": "5981bda1a34abd07790425b6c5ec48705c8005e7",
+      "source_release": "v0.6.3",
+      "capture_date": "2026-10-28",
+      "capture": {
+        "browser": "Google Chrome 156.0.8078.73",
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "deviceScaleFactor": 1
+        },
+        "origin": "http://localhost:18002",
+        "server_host": "Starship",
+        "isolation": "Fresh local origin with Guest profile only; unmodified released Pages artifact. No sign-in, real-account data, public-profile reads, or production writes.",
+        "published_build": {
+          "repository": "byebyebryan/gomoku2d",
+          "release": "v0.6.3",
+          "source_revision": "5981bda1a34abd07790425b6c5ec48705c8005e7",
+          "workflow_run": 40577585755,
+          "artifact_id": 12766719431,
+          "artifact_digest": "sha256:08562118dc993142fab4fcec8285e93beeadc27d8815b9a26078668c189742d0",
+          "artifact_tar_sha256": "69f00ce99d3fbe41ded351ad030c72f22f41cfdfd380ba6b119507524a777aaa"
+        },
+        "published_parity": {
+          "index_equal": true,
+          "assets": [
+            {
+              "path": "/assets/index-DeVPBzWv.js",
+              "sha256": "4be39d16447e0320229814844391c57137d4715a4b2bf7323d815ce49d7fb8b6",
+              "equal": true
+            },
+            {
+              "path": "/assets/rolldown-runtime-XKyaHtl9.js",
+              "sha256": "548d1dbf321e7d2ae804fcc158b588706a7c52f8ca175de1490c6ccb4dbe55b7",
+              "equal": true
+            },
+            {
+              "path": "/assets/jsx-runtime-C4m2jyM5.js",
+              "sha256": "2e9d5f76a3c162c2da831c44e1f6a141a5de66a6e5a760453234784d7a0c810d",
+              "equal": true
+            },
+            {
+              "path": "/assets/sequence_font-BHmT62ms.js",
+              "sha256": "d1f198ff901270b972d412ce478f2dcd32efd781c9799711a3acf2f91539916f",
+              "equal": true
+            },
+            {
+              "path": "/assets/index-BzajAtUe.css",
+              "sha256": "e86fc58ea309de749cd0ba82c2550d3e313ba829fee52bdca9222be0c3758382",
+              "equal": true
+            }
+          ]
+        },
+        "method": "Browser runtime screenshots (JPEG), plus native CDP Page.startScreencast PNG frames for gameplay. Full 1280x720 viewport at DPR 1; no page content/style substitutions."
+      },
+      "license": "MIT",
+      "font_license": "CC0-1.0 (PixelOperator)",
+      "credit": {
+        "label": "Gomoku2D original application and artwork",
+        "author": "ByeByeBryan",
+        "url": "https://github.com/byebyebryan/gomoku2d/blob/5981bda1a34abd07790425b6c5ec48705c8005e7/LICENSE"
+      },
+      "source_capture": "replay-26.jpg",
+      "source_sha256": "1ec7c21a182d1208a69727855a2145177336adce8ab52ee5f837fe573fc66675",
+      "scene_url": "/replay/shared/",
+      "scene_state": "Guide finished-game example at ply 26/28, with settled analysis, both stone colours and native playback controls.",
+      "treatment": "Uncropped 1280x720 browser screenshot converted from JPEG to PNG with ImageMagick, metadata stripped; no resizing, page edits or overlays. Poster for paused, no-JavaScript, no-autoplay and reduced-motion viewing.",
+      "width": 1280,
+      "height": 720,
+      "bytes": 319945,
+      "sha256": "e34a338c8d16a0e0d8c8f8ccaf59ca0830bbea7f723e0225ad73797513624e30"
     },
     {
       "file": "powered-descent-terrain.svg",

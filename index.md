@@ -29,14 +29,16 @@ projects:
         url: https://github.com/byebyebryan/powered-descent-lab
   - name: Gomoku2D
     kind: Browser game
-    description: Gomoku and Renju with bots, tactical hints, and replay analysis.
+    description: Gomoku and Renju with tactical hints, replay analysis and shareable games. Built with AI, with design reviews and bot experiments open to inspect.
     media: video
-    video: /assets/projects/gomoku2d.mp4
-    image: /assets/projects/gomoku2d.png
-    image_alt: A Gomoku2D match with tactical hints and a bot response.
+    video: /assets/projects/gomoku2d.mp4?v=0b8cb3bc64
+    image: /assets/projects/gomoku2d.png?v=e34a338c8d
+    image_alt: "Gomoku2D demo: guest play with tactical hints, replay analysis and sharing, UI history comparisons, and native pixel icon inspection."
     links:
       - label: Play
         url: https://gomoku2d.byebyebryan.com/
+      - label: Dev site
+        url: https://gomoku2d.byebyebryan.com/dev/
       - label: Code
         url: https://github.com/byebyebryan/gomoku2d
   - name: Raster 90

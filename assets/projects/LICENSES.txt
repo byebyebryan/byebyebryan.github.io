@@ -27,3 +27,32 @@ THE SOFTWARE.
 Raster 90 original artwork, generated composition and animation
 CC0 1.0 Universal
 https://github.com/byebyebryan/raster90/blob/1eb7d9b3490fb9d7333d7d44b3bbc906fa40781a/LICENSES/CC0-1.0.txt
+
+
+Gomoku2D browser reel and replay-analysis poster
+https://github.com/byebyebryan/gomoku2d
+
+MIT License
+
+Copyright (c) 2025-2026 ByeByeBryan
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+PixelOperator fonts rendered in the application: CC0 1.0 Universal
+https://github.com/byebyebryan/gomoku2d/blob/5981bda1a34abd07790425b6c5ec48705c8005e7/gomoku-web/assets/fonts/LICENSE.txt
