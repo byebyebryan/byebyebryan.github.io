@@ -31,9 +31,9 @@ projects:
     kind: Browser game
     description: Gomoku and Renju with tactical hints, replay analysis and shareable games. Built with AI, with design reviews and bot experiments open to inspect.
     media: video
-    video: /assets/projects/gomoku2d.mp4?v=0b8cb3bc64
-    image: /assets/projects/gomoku2d.png?v=e34a338c8d
-    image_alt: "Gomoku2D demo: guest play with tactical hints, replay analysis and sharing, UI history comparisons, and native pixel icon inspection."
+    video: /assets/projects/gomoku2d.mp4?v=b81df82283
+    image: /assets/projects/gomoku2d.png?v=8e17ac7d81
+    image_alt: "Gomoku2D demo: a guest move and bot response, analysis of the same game, sharing a position, and native pixel-art inspection."
     links:
       - label: Play
         url: https://gomoku2d.byebyebryan.com/

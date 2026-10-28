@@ -228,9 +228,9 @@
           "height": 720,
           "deviceScaleFactor": 1
         },
-        "origin": "http://localhost:18002",
+        "origin": "http://localhost:18004",
         "server_host": "Starship",
-        "isolation": "Fresh local origin with Guest profile only; unmodified released Pages artifact. No sign-in, real-account data, public-profile reads, or production writes.",
+        "isolation": "Fresh local origin, unmodified released v0.6.3 Pages artifact. Guest-only branch from the published finished-game bot example at move 26; one native guest move and bot response finish it. The same local match is analyzed and shared. No sign-in, real-account data, public-profile reads or production writes. Copy Link, Save and Publish are not invoked.",
         "published_build": {
           "repository": "byebyebryan/gomoku2d",
           "release": "v0.6.3",
@@ -270,7 +270,7 @@
             }
           ]
         },
-        "method": "Browser runtime screenshots (JPEG), plus native CDP Page.startScreencast PNG frames for gameplay. Full 1280x720 viewport at DPR 1; no page content/style substitutions."
+        "method": "Native CDP Page.startScreencast PNG frames for play, replay and sharing; CDP Page.captureScreenshot PNG for the icon grid. Full 1280x720 viewport at DPR 1. No crop, resize, overlays, page content or style substitutions."
       },
       "license": "MIT",
       "font_license": "CC0-1.0 (PixelOperator)",
@@ -282,132 +282,113 @@
       "scenes": [
         {
           "id": "play",
-          "capture_file": "play-take-110.png",
-          "capture_sha256": "b5afd599ddab5512dae104249ff7c4b73c04e2547ee31bab0e7396b7c8484f30",
           "url": "/match/local",
-          "state": "Guest branch from Guide example another-line at ply 26. Black L7 (cell 101), then Normal Bot L9 (cell 131), reaching ply 28. Native 4-second screencast.",
+          "state": "Start at move 26 of the Guide finished-game bot example. Guest K6 (cell 85), Normal Bot F11 (cell 155), reaching move 28 with White winning. The first 26 moves are the bot-generated example, not a real player history.",
+          "purpose": "Register the populated board and hints, see one move and bot response, then read the outcome.",
+          "pacing": "1.5-second opening; native move and reply; about 2.9 seconds on the result.",
+          "cut_reason": "Cut after the result registers. Match the same finished board in the next shot.",
           "output_start_seconds": 0,
-          "output_duration_seconds": 4,
+          "output_duration_seconds": 4.5,
           "playback_rate": 1,
-          "native_frames": {
-            "count": 116,
+          "capture": {
+            "method": "CDP Page.startScreencast",
             "format": "PNG",
-            "duration_seconds": 3.9960110187530518,
-            "ledger_sha256": "cbf0842fc5b0de6b1e55447e6f4fa2e2d4229ad3f48114d2465389d5381c7ed5",
-            "timing": "CDP monotonic capture timestamps, resampled to 30 fps; final frame held to exactly 4 seconds",
+            "every_nth_frame": 2,
+            "selected_frame_count": 136,
+            "ledger_sha256": "67525c0f7b6b4e90de9df5ede094ede430c2d071936fb0d7c82c6923e2f1b804",
             "first_frame": {
-              "file": "play-take-110.png",
-              "sha256": "b5afd599ddab5512dae104249ff7c4b73c04e2547ee31bab0e7396b7c8484f30",
-              "timestamp": 1793218360.003617
+              "file": "play-198.png",
+              "sha256": "104c9e155f929caa9ae2ba09bbca210f0a07d598f135c2ee4e55e71c2a22064e",
+              "timestamp": 1793221370.259211
             },
             "last_frame": {
-              "file": "play-take-225.png",
-              "sha256": "fdabe0e39325bb80e00e636d57239fab94ea9a2caf94c96c432f6e5fd018fd46",
-              "timestamp": 1793218363.999628
-            }
+              "file": "play-333.png",
+              "sha256": "0bd01a07a72d7795ea91151e1de13eec9a8c7388d47cfa85768db7e7af02c96c",
+              "timestamp": 1793221374.759031
+            },
+            "timing": "Native capture timestamps at millisecond precision, resampled to 30 fps. No speed changes. End trim or last-frame extension only to reach the stated duration."
           }
         },
         {
-          "id": "guide",
-          "capture_file": "guide.jpg",
-          "capture_sha256": "bb93170b0276f42869ea54daf0bd0eae410017a428cde0f73a5208a3d0b675e7",
-          "url": "/guide/#examples",
-          "state": "Two legal bot-generated examples; no saved user history.",
-          "output_start_seconds": 4,
-          "output_duration_seconds": 1,
-          "playback_rate": 1
-        },
-        {
-          "id": "analysis-26",
-          "capture_file": "replay-26.jpg",
-          "capture_sha256": "1ec7c21a182d1208a69727855a2145177336adce8ab52ee5f837fe573fc66675",
-          "url": "/replay/shared/",
-          "state": "Guide finished-game example, analysis settled, ply 26/28, both stone colours and replay controls visible.",
-          "output_start_seconds": 5,
-          "output_duration_seconds": 1.5,
-          "playback_rate": 1
-        },
-        {
-          "id": "analysis-24",
-          "capture_file": "replay-24.jpg",
-          "capture_sha256": "57a62e3ed80a84541678014e6a479dcfda0cd8884fea458c3cf1309709801954",
-          "url": "/replay/shared/",
-          "state": "Same example, Previous turn to ply 24/28.",
-          "output_start_seconds": 6.5,
-          "output_duration_seconds": 1.5,
-          "playback_rate": 1
-        },
-        {
-          "id": "share-options",
-          "capture_file": "share-as-played.jpg",
-          "capture_sha256": "d3e8b599fa0b7a0d730ffb99a1d5b5ed03bec85b6fa1c2fb4434798c80d742d8",
-          "url": "/replay/shared/",
-          "state": "Share replay pane at ply 24, As played names and no available profile links; bot-generated example.",
-          "output_start_seconds": 8,
-          "output_duration_seconds": 2,
-          "playback_rate": 1
-        },
-        {
-          "id": "share-link",
-          "capture_file": "share-copy.jpg",
-          "capture_sha256": "d58c5dec5cb79b655e551293caa29b10b36012604ce3fd2aa1bdcc3536f095b8",
-          "url": "/replay/shared/",
-          "state": "Same Share replay pane, scrolled to Copy Link and local replay URL. No copying, saving or publishing.",
-          "output_start_seconds": 10,
-          "output_duration_seconds": 2,
-          "playback_rate": 1
-        },
-        {
-          "id": "history-intro",
-          "capture_file": "history-intro.jpg",
-          "capture_sha256": "f01e968c391e9d22763eef6c245103d2691059e49899aa86837edf5e947bbc77",
-          "url": "/dev/reviews/history/?version=0.6.2&layout=portrait",
-          "state": "UI history viewer and selected 0.6.2 milestone. This is the v0.6.3 viewer, not a new capture of an old app version.",
-          "output_start_seconds": 12,
-          "output_duration_seconds": 1,
-          "playback_rate": 1
-        },
-        {
-          "id": "history-comparison",
-          "capture_file": "history-compare.jpg",
-          "capture_sha256": "65946400730e6a396cb5f854dab3be2a1e4a4e3086af295e2b6b01f4161e0011",
-          "url": "/dev/reviews/history/?version=0.6.2&layout=portrait&pair=home-guide-discovery.default&full=0",
-          "state": "Native adjacent Home comparison, v0.6.1 vs v0.6.2, portrait, matched scale, Full captures off. Original labels retained. Frozen source images remain retrospective captures.",
-          "output_start_seconds": 13,
-          "output_duration_seconds": 3,
+          "id": "review",
+          "url": "/replay/e24fa55a-e36e-4aea-9530-52b42123f5fb",
+          "state": "Open Analyze on that exact locally finished Guest match, with analysis settled. After 1.25 seconds, seek the replay timeline from move 28 to move 16. Native status: Black is locked in / No viable escape.",
+          "purpose": "Show that a finished game can be rewound and inspected.",
+          "pacing": "1.25 seconds on the same end board; one native timeline seek; about 4.75 seconds on the earlier analyzed position.",
+          "cut_reason": "Keep the board anchored. Cut after the earlier position has been readable.",
+          "output_start_seconds": 4.5,
+          "output_duration_seconds": 6,
           "playback_rate": 1,
-          "historical_images": [
-            {
-              "path": "history/home-default-061-portrait-78b562a50de4.png",
-              "sha256": "78b562a50de4a86ef29baba7372a8ad731ec127050e2eb13accad92653a4a7bf"
+          "capture": {
+            "method": "CDP Page.startScreencast",
+            "format": "PNG",
+            "every_nth_frame": 2,
+            "selected_frame_count": 180,
+            "ledger_sha256": "602de26ae79e9e80790d4e274c56e0301633feab68390331bc287dc9947c9ed4",
+            "first_frame": {
+              "file": "review-369.png",
+              "sha256": "f7d2ea9969e77c56cbdb8c7c1811ec8e79dff6ce309ebe173954ac8523bd0d72",
+              "timestamp": 1793221469.771897
             },
-            {
-              "path": "history/home-default-062-portrait-26512a3bc9b4.png",
-              "sha256": "26512a3bc9b4caeeecbf6168d499c424d5da0ede84297478b68c44f3cfbc9975"
-            }
-          ]
+            "last_frame": {
+              "file": "review-548.png",
+              "sha256": "5ace6dd2f6f5e87c0b298c3830afb9f6748e428fd862a8b8769417da2db89ac0",
+              "timestamp": 1793221475.754991
+            },
+            "timing": "Native capture timestamps at millisecond precision, resampled to 30 fps. No speed changes. End trim or last-frame extension only to reach the stated duration."
+          }
         },
         {
-          "id": "icon-inspection",
-          "capture_file": "icons.jpg",
-          "capture_sha256": "04c1ac0f315bee22f26208436b1c0703ea081aa49ed3e2e2fa18b5b86ce29e7b",
+          "id": "share",
+          "url": "/replay/e24fa55a-e36e-4aea-9530-52b42123f5fb",
+          "state": "Same replay at move 16. Open Share replay, As played names, no available profile links. After 1.8 seconds, scroll the native sidebar to Copy Link. No copy, save or publication action.",
+          "purpose": "Connect the position just reviewed to the sharing action.",
+          "pacing": "1.8 seconds on options; native sidebar scroll; remaining time on Copy Link and the local replay URL.",
+          "cut_reason": "The fixed board preserves context during panel movement. Cut after the sharing action is visible.",
+          "output_start_seconds": 10.5,
+          "output_duration_seconds": 4.5,
+          "playback_rate": 1,
+          "capture": {
+            "method": "CDP Page.startScreencast",
+            "format": "PNG",
+            "every_nth_frame": 2,
+            "selected_frame_count": 134,
+            "ledger_sha256": "9da54e03be0735814bbe6f77d96655fd737fd9e10a289cb4e001bab8c3ed9a83",
+            "first_frame": {
+              "file": "share-550.png",
+              "sha256": "3206fd8b2d4e3388311663b89ddb0fba9b6b86c73a72068bb6f8e2542faecbc3",
+              "timestamp": 1793221498.070765
+            },
+            "last_frame": {
+              "file": "share-683.png",
+              "sha256": "edafa86d701c74923362baf78a05006bb93c9cc783c11ec2bda985e08e818de8",
+              "timestamp": 1793221502.537253
+            },
+            "timing": "Native capture timestamps at millisecond precision, resampled to 30 fps. No speed changes. End trim or last-frame extension only to reach the stated duration."
+          }
+        },
+        {
+          "id": "pixel-art",
           "url": "/visuals/?view=icons&compare=share,save,publish",
-          "state": "Native Share, Save and Publish 24x24 and 2x previews beside enlarged source grids. Grid on; no art edits.",
-          "output_start_seconds": 16,
-          "output_duration_seconds": 4,
-          "playback_rate": 1
+          "state": "Native Share, Save and Publish icon inspection: 24x24 and 2x samples beside enlarged source grids. Grid on.",
+          "capture_file": "icons.png",
+          "capture_sha256": "971a1eaf3c8c6e2386f77b5faa33e498eb4c8c3033a711592672ef2e566a0a5c",
+          "output_start_seconds": 15,
+          "output_duration_seconds": 5,
+          "purpose": "End with one legible example of the design work behind the game. The Share symbol connects this shot to the preceding action.",
+          "pacing": "One uninterrupted five-second hold.",
+          "cut_reason": "A quiet closing beat lets viewers inspect the artwork before the loop returns to play."
         }
       ],
       "example_sources": {
         "path": "gomoku-web/src/replay/replay_examples.ts",
         "revision": "5981bda1a34abd07790425b6c5ec48705c8005e7",
         "examples": [
-          "another-line",
           "finished-game"
         ],
-        "note": "Static legal bot games extracted from published lab reports, not played-user history."
+        "note": "Static legal bot game. Branch at move 26, play the final native Guest turn, then open Analyze on that exact local match. No real-account game data."
       },
-      "treatment": "20-second edited browser reel. Four seconds of native guest play, then held settled browser captures: Guide examples 1s; analysis at ply 26 and 24 for 1.5s each; Share replay upper and lower pane for 2s each; UI history introduction 1s and native neighbouring-release comparison 3s; icon inspection 4s. Hard cuts, no crop, resize, overlays or synthetic UI. Waiting and navigation omitted. UI history is the application's own comparison, with original historical version labels retained.",
+      "treatment": "Four-shot, 20-second browser reel: play and outcome 0-4.5s; analyze the same game 4.5-10.5s; share the same position 10.5-15s; native pixel inspection 15-20s. First three shots retain the same game and board framing. One native replay seek and one visible sidebar scroll replace changes between unrelated screens. Navigation and analysis-loading time are omitted between shots. Hard cuts, original 1280x720 framing, no crop, resize, overlays or synthetic UI. The final icon screen is held for five seconds.",
       "encoding": {
         "tool": "ffmpeg version n9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
         "codec": "libx264",
@@ -423,10 +404,10 @@
         "frames": 600,
         "audio": false,
         "faststart": true,
-        "scene_timing": "4s native capture followed by a concat of held screenshots at 1, 1.5, 1.5, 2, 2, 1, 3 and 4 seconds; all at 30 fps."
+        "scene_timing": "4.5s native play; 6s native replay; 4.5s native sharing; 5s held PNG icon screenshot. Timestamped screencast inputs resampled to 30 fps."
       },
-      "bytes": 503677,
-      "sha256": "0b8cb3bc640f28868cb804a056723c3c18e229a377ee1ead8d4a6c30b598d9ef"
+      "bytes": 338479,
+      "sha256": "b81df82283a4cef59d725ae2284df76a62dc8b20043f87a8f592dca85e526300"
     },
     {
       "file": "gomoku2d.png",
@@ -441,9 +422,9 @@
           "height": 720,
           "deviceScaleFactor": 1
         },
-        "origin": "http://localhost:18002",
+        "origin": "http://localhost:18004",
         "server_host": "Starship",
-        "isolation": "Fresh local origin with Guest profile only; unmodified released Pages artifact. No sign-in, real-account data, public-profile reads, or production writes.",
+        "isolation": "Fresh local origin, unmodified released v0.6.3 Pages artifact. Guest-only branch from the published finished-game bot example at move 26; one native guest move and bot response finish it. The same local match is analyzed and shared. No sign-in, real-account data, public-profile reads or production writes. Copy Link, Save and Publish are not invoked.",
         "published_build": {
           "repository": "byebyebryan/gomoku2d",
           "release": "v0.6.3",
@@ -483,7 +464,7 @@
             }
           ]
         },
-        "method": "Browser runtime screenshots (JPEG), plus native CDP Page.startScreencast PNG frames for gameplay. Full 1280x720 viewport at DPR 1; no page content/style substitutions."
+        "method": "Native CDP Page.startScreencast PNG frames for play, replay and sharing; CDP Page.captureScreenshot PNG for the icon grid. Full 1280x720 viewport at DPR 1. No crop, resize, overlays, page content or style substitutions."
       },
       "license": "MIT",
       "font_license": "CC0-1.0 (PixelOperator)",
@@ -492,15 +473,15 @@
         "author": "ByeByeBryan",
         "url": "https://github.com/byebyebryan/gomoku2d/blob/5981bda1a34abd07790425b6c5ec48705c8005e7/LICENSE"
       },
-      "source_capture": "replay-26.jpg",
-      "source_sha256": "1ec7c21a182d1208a69727855a2145177336adce8ab52ee5f837fe573fc66675",
-      "scene_url": "/replay/shared/",
-      "scene_state": "Guide finished-game example at ply 26/28, with settled analysis, both stone colours and native playback controls.",
-      "treatment": "Uncropped 1280x720 browser screenshot converted from JPEG to PNG with ImageMagick, metadata stripped; no resizing, page edits or overlays. Poster for paused, no-JavaScript, no-autoplay and reduced-motion viewing.",
+      "source_capture": "play-228.png",
+      "source_sha256": "8e17ac7d8163abcaeae6e787935f1375f061328a9f7ccbaf35b3729e64551e0d",
+      "scene_url": "/match/local",
+      "scene_state": "Unmodified native PNG from one second into the opening shot: Guest to move at ply 26, tactical hints and both stone colours. Local Guest branch from a bot-generated Guide example.",
+      "treatment": "Unmodified 1280x720 PNG screencast frame. No conversion, crop, resize or overlays. Poster for paused, no-JavaScript, no-autoplay and reduced-motion viewing.",
       "width": 1280,
       "height": 720,
-      "bytes": 319945,
-      "sha256": "e34a338c8d16a0e0d8c8f8ccaf59ca0830bbea7f723e0225ad73797513624e30"
+      "bytes": 37700,
+      "sha256": "8e17ac7d8163abcaeae6e787935f1375f061328a9f7ccbaf35b3729e64551e0d"
     },
     {
       "file": "powered-descent-terrain.svg",
