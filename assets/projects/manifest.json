@@ -614,6 +614,148 @@
         "landing_pads": "#7ce39b",
         "flight_trail": "#70cddd"
       }
+    },
+    {
+      "file": "observer-terminal-wide.png",
+      "source_repository": "https://github.com/byebyebryan/fleet-plus",
+      "source_revision": "391a7c57faf805fe88957dca41e7b90af711a4ae",
+      "source_revision_scope": "Fleet Plus committed media selection; native application source/tag and capture recipe identities remain recorded separately below.",
+      "source_path": "assets/observer-terminal-wide.png",
+      "source_sha256": "ddd1641968f8336886291c442d360d034e63f7ba851d37392702aead7567d5a7",
+      "capture_provenance": {
+        "immediate_source": "Fleet Plus assets/observer-terminal-wide.png, copied byte-for-byte with no additional resize or crop.",
+        "fleet_provenance": {
+          "path": "https://dev.byebyebryan.com/fleet-plus/assets/provenance.json",
+          "sha256": "14cf0b9b730f1b3f9eef81c2ba2bf805e6fa001a8980a67b0368b2510ffc2058"
+        },
+        "observer": {
+          "release_tag": "v0.7.0a14",
+          "tag_revision": "7dbcd611f7b0ecfbebf7b2e8053963fb25915999",
+          "source_revision": "dcbd69d9debed39eaff3f898815dfb52c6711174",
+          "source_path": "agent_observer/terminal/dashboard.py",
+          "module_sha256": "625b998fd002f261ecb54660029f025e573cc4212448eac7199e453250f1e33a",
+          "wheel_sha256": "46a1158023023b60d9b839184a45f7b7eeb21b04dce67aad808fa8277522518f"
+        },
+        "mesh": {
+          "version": "0.1.0a25",
+          "wheel_sha256": "0055e42162827744add4f817d3918cfc20471e5ec5a3cdf0840d254f76f5dc3a"
+        },
+        "capture_recipe": [
+          {
+            "path": "scripts/capture-terminal-media.sh",
+            "sha256": "f568ca7a9803873212a4c3b68e8b59a6a1696c5aee8942d8f687eac696d50b38"
+          },
+          {
+            "path": "scripts/capture_terminal_media.py",
+            "sha256": "b2eb5efd8de13f6d91df0f421e2c86f16a41d2cf784b5890e3c1d3d97cd05c4d"
+          },
+          {
+            "path": "scripts/terminal_colors.py",
+            "sha256": "f01466f65fcc538009f81c718e0c23b492630ee888d45ef07a6bef75869c59a9"
+          },
+          {
+            "path": "tests/test_terminal_colors.py",
+            "sha256": "ce9ff6cc09286ec85ba134966aa00436028de877273c0dd9a26db0cc0d5d84ef"
+          }
+        ],
+        "requirements": {
+          "path": "scripts/terminal-capture-requirements.txt",
+          "sha256": "f156fb8d52d94447667c397880a4636698d9faf8de8efb702dfc7629bcbd7d21"
+        },
+        "fixture": {
+          "path": "fixtures/terminal-dashboard-scenario.json",
+          "sha256": "d4c346a0551b361e5ed000e85f7a16216e7b6e03a5b339189f3421c5d370525a"
+        },
+        "method": "Released Observer CLI in a draining Linux PTY; pyte 0.8.2 parses VT cells; SVG text rasterized by librsvg; no UI redraw or monkeypatch.",
+        "font": "Noto Sans Mono Regular, system font rendered into pixels; sha256 65b5e2b2c4a1fba9ae8be1f026cb35b03dcb8886d9b2a4147054fde12f7e767d.",
+        "geometry": "140x24",
+        "color_mode": "--color always",
+        "working_set_window_hours": 72
+      },
+      "capture_receipt": {
+        "path": "https://dev.byebyebryan.com/fleet-plus/assets/provenance.json",
+        "sha256": "14cf0b9b730f1b3f9eef81c2ba2bf805e6fa001a8980a67b0368b2510ffc2058"
+      },
+      "credit": {
+        "label": "Fleet Plus · Agent Observer a14 terminal rendering",
+        "url": "https://dev.byebyebryan.com/fleet-plus/assets/provenance.json",
+        "author": "Bryan"
+      },
+      "treatment": "Byte-identical copy of the Fleet Plus wide still; native terminal rendering with fictional cached sources, not a live fleet or physical terminal recording.",
+      "width": 1680,
+      "height": 576,
+      "sha256": "ddd1641968f8336886291c442d360d034e63f7ba851d37392702aead7567d5a7"
+    },
+    {
+      "file": "observer-terminal-compact.png",
+      "source_repository": "https://github.com/byebyebryan/fleet-plus",
+      "source_revision": "391a7c57faf805fe88957dca41e7b90af711a4ae",
+      "source_revision_scope": "Fleet Plus committed media selection; native application source/tag and capture recipe identities remain recorded separately below.",
+      "source_path": "assets/observer-terminal-compact.png",
+      "source_sha256": "16c89180bb495b637735544357e34489c6d797ef8c293b8dc3d98f8638de3659",
+      "capture_provenance": {
+        "immediate_source": "Fleet Plus assets/observer-terminal-compact.png, copied byte-for-byte with no additional resize or crop.",
+        "fleet_provenance": {
+          "path": "https://dev.byebyebryan.com/fleet-plus/assets/provenance.json",
+          "sha256": "14cf0b9b730f1b3f9eef81c2ba2bf805e6fa001a8980a67b0368b2510ffc2058"
+        },
+        "observer": {
+          "release_tag": "v0.7.0a14",
+          "tag_revision": "7dbcd611f7b0ecfbebf7b2e8053963fb25915999",
+          "source_revision": "dcbd69d9debed39eaff3f898815dfb52c6711174",
+          "source_path": "agent_observer/terminal/dashboard.py",
+          "module_sha256": "625b998fd002f261ecb54660029f025e573cc4212448eac7199e453250f1e33a",
+          "wheel_sha256": "46a1158023023b60d9b839184a45f7b7eeb21b04dce67aad808fa8277522518f"
+        },
+        "mesh": {
+          "version": "0.1.0a25",
+          "wheel_sha256": "0055e42162827744add4f817d3918cfc20471e5ec5a3cdf0840d254f76f5dc3a"
+        },
+        "capture_recipe": [
+          {
+            "path": "scripts/capture-terminal-media.sh",
+            "sha256": "f568ca7a9803873212a4c3b68e8b59a6a1696c5aee8942d8f687eac696d50b38"
+          },
+          {
+            "path": "scripts/capture_terminal_media.py",
+            "sha256": "b2eb5efd8de13f6d91df0f421e2c86f16a41d2cf784b5890e3c1d3d97cd05c4d"
+          },
+          {
+            "path": "scripts/terminal_colors.py",
+            "sha256": "f01466f65fcc538009f81c718e0c23b492630ee888d45ef07a6bef75869c59a9"
+          },
+          {
+            "path": "tests/test_terminal_colors.py",
+            "sha256": "ce9ff6cc09286ec85ba134966aa00436028de877273c0dd9a26db0cc0d5d84ef"
+          }
+        ],
+        "requirements": {
+          "path": "scripts/terminal-capture-requirements.txt",
+          "sha256": "f156fb8d52d94447667c397880a4636698d9faf8de8efb702dfc7629bcbd7d21"
+        },
+        "fixture": {
+          "path": "fixtures/terminal-dashboard-scenario.json",
+          "sha256": "d4c346a0551b361e5ed000e85f7a16216e7b6e03a5b339189f3421c5d370525a"
+        },
+        "method": "Released Observer CLI in a draining Linux PTY; pyte 0.8.2 parses VT cells; SVG text rasterized by librsvg; no UI redraw or monkeypatch.",
+        "font": "Noto Sans Mono Regular, system font rendered into pixels; sha256 65b5e2b2c4a1fba9ae8be1f026cb35b03dcb8886d9b2a4147054fde12f7e767d.",
+        "geometry": "60x20",
+        "color_mode": "--color never",
+        "working_set_window_hours": 72
+      },
+      "capture_receipt": {
+        "path": "https://dev.byebyebryan.com/fleet-plus/assets/provenance.json",
+        "sha256": "14cf0b9b730f1b3f9eef81c2ba2bf805e6fa001a8980a67b0368b2510ffc2058"
+      },
+      "credit": {
+        "label": "Fleet Plus · Agent Observer a14 terminal rendering",
+        "url": "https://dev.byebyebryan.com/fleet-plus/assets/provenance.json",
+        "author": "Bryan"
+      },
+      "treatment": "Byte-identical copy of the Fleet Plus compact still. The actual a14 CLI uses its supported --color never mode for readability; fictional cached sources are not a live fleet or physical terminal recording.",
+      "width": 720,
+      "height": 480,
+      "sha256": "16c89180bb495b637735544357e34489c6d797ef8c293b8dc3d98f8638de3659"
     }
   ]
 }

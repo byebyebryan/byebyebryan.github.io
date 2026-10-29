@@ -68,17 +68,15 @@ projects:
         url: https://github.com/byebyebryan/esp32-349
       - label: RLCD dashboard
         url: https://github.com/byebyebryan/esp32-rlcd/tree/main/projects/agent-dashboard
-  - name: Observer Core
-    kind: Shared services
-    description: Read-only Codex observations for dashboards, reusable host routing, and independent tmux views.
+  - name: Fleet Plus
+    kind: Terminal & desktop tools
+    description: Keep Codex sessions in view with a terminal CLI and dashboard, alongside independent host access, native TUI entry and tmux tools.
     media: observers
     links:
-      - label: Fleet Plus walkthrough
+      - label: Explore Fleet Plus
         url: https://dev.byebyebryan.com/fleet-plus/
-      - label: Mesh Plus
-        url: https://github.com/byebyebryan/mesh-plus
-      - label: Tmux Observer
-        url: https://github.com/byebyebryan/tmux-observer
+      - label: Terminal setup
+        url: https://dev.byebyebryan.com/fleet-plus/start/
       - label: Agent Observer
         url: https://github.com/byebyebryan/agent-observer
   - name: Rofi Plus

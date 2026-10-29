@@ -59,7 +59,7 @@ show those conditions explicitly instead of converting them into idle or empty.
 That distinction matters in real acceptance, too. The October 23 delivery
 checkpoint retained an unresolved partial working-set membership result on one
 host despite a ready full cached service. It did not establish a complete-empty
-roster or identify a deployment regression. The [compatibility record](https://dev.byebyebryan.com/fleet-plus/compatibility/#known-bounds)
+roster or identify a deployment regression. The [compatibility record](https://github.com/byebyebryan/fleet-plus/blob/07e815ea198bfff1fb9b08a3e0270d7a905ebde6/docs/compatibility.md#known-bounds-at-the-2026-10-23-checkpoint)
 keeps that limit visible.
 
 ## Routes stay directional

@@ -53,14 +53,11 @@ layout: default
                 <figcaption>RLCD dashboard · fictional demo data</figcaption>
               </figure>
             {% when 'observers' %}
-              <figure class="software-preview observer-preview">
-                <div class="preview-topline"><span>Observer Core</span><span>Shared state</span></div>
-                <div class="observer-sources">
-                  <div><strong>Agent Observer</strong><span>Codex activity</span></div>
-                  <div><strong>Tmux Observer</strong><span>Sessions & desktop state</span></div>
-                </div>
-                <div class="observer-delivery"><strong>Mesh Plus</strong><span>Hosts · routes · fresh delivery</span></div>
-                <figcaption>Feeds for dashboards, Tmux Plus & read clients</figcaption>
+              <figure class="software-preview observer-preview observer-terminal-preview">
+                <img src="{{ '/assets/projects/observer-terminal-compact.png' | relative_url }}"
+                  alt="Compact Agent Observer terminal dashboard showing the same fictional Codex sessions and source health in a narrow terminal."
+                  width="720" height="480" loading="lazy" />
+                <figcaption>Compact native still · fictional cached sources · <a href="https://dev.byebyebryan.com/fleet-plus/assets/observer-terminal-demo.mp4">Watch Fleet demo</a></figcaption>
               </figure>
             {% when 'rofi' %}
               <figure class="software-preview rofi-preview">
